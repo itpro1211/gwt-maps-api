@@ -28,7 +28,9 @@ import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**
- * Entry point classes define <code>onModuleLoad()</code>.
+ * 
+ * Super raw source!
+ * 
  */
 public class Apis_Maps_Test implements EntryPoint {
 
@@ -39,7 +41,7 @@ public class Apis_Maps_Test implements EntryPoint {
   private void loadMapApi() {
     Runnable onLoad = new Runnable() {
       public void run() {
-        drawFusionMap();
+        draw();
       }
     };
     boolean sensor = true;
@@ -47,6 +49,14 @@ public class Apis_Maps_Test implements EntryPoint {
   }
 
   
+  private void draw() {
+
+    drawMap();
+    
+    drawFusionMap();
+    
+  }
+
   private void drawMap() {
     MapOptions options = MapOptions.newInstance();
     MapWidget wMap = new MapWidget(options);
@@ -96,7 +106,7 @@ public class Apis_Maps_Test implements EntryPoint {
     
     FlowPanel fp = new FlowPanel();
     RootPanel.get().add(fp);
-    fp.setSize("400px", "400px");
+    fp.setSize("500px", "500px");
     fp.addStyleName("test2");
     testMap(fp.getElement(), options);
   }

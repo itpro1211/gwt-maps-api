@@ -40,7 +40,7 @@ public class FusionTablesWidget extends Composite {
 
     pWidget.clear();
 
-    pWidget.add(new HTML("Fusion Tables Example"));
+    pWidget.add(new HTML("Fusion Tables Example - Try clicking on marker"));
 
     setupMap();
 
