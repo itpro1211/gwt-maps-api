@@ -51,11 +51,35 @@ public class Apis_Maps_Test implements EntryPoint {
   
   private void draw() {
 
-    drawMap();
+    drawBasicMap();
     
     drawFusionMap();
     
+    drawKmlMap();
+    
   }
+  
+  private void drawBasicMap() {
+    BasicMappingWidget wMap = new BasicMappingWidget();
+    RootPanel.get().add(wMap);
+  }
+ 
+  private void drawFusionMap() {
+    FusionTablesWidget wMap = new FusionTablesWidget();
+    RootPanel.get().add(wMap);
+  }
+  
+  private void drawKmlMap() {
+    KmlWidget wMap = new KmlWidget();
+    RootPanel.get().add(wMap);
+  }
+  
+  
+  
+  
+  
+  
+  
 
   private void drawMap() {
     MapOptions options = MapOptions.newInstance();
@@ -79,12 +103,8 @@ public class Apis_Maps_Test implements EntryPoint {
     wMap.setSize("500px", "500px");
     wMap.addStyleName("test1");
   }
-  
  
-  private void drawFusionMap() {
-    FusionTablesWidget wMap = new FusionTablesWidget();
-    RootPanel.get().add(wMap);
-  }
+ 
   
   private void drawTestMap() {
     
