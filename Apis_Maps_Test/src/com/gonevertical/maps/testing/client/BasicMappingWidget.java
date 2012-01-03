@@ -58,7 +58,7 @@ public class BasicMappingWidget extends Composite {
     MapOptions opts = MapOptions.newInstance();
     opts.setZoom(4);
     opts.setCenter(center);
-    opts.setMapTypeId(MapTypeId.SATELLITE);
+    opts.setMapTypeId(MapTypeId.HYBRID);
     
     mapWidget = new MapWidget(opts);
     pWidget.add(mapWidget);
