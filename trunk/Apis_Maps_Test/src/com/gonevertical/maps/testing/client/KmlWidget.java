@@ -83,17 +83,17 @@ public class KmlWidget extends Composite {
     });
     
     // TODO I need a better link with more meta data
-    KmlLayerMetadata right = o.getMetadata();
-    KmlAuthor author = right.getAuthor();
-    String authName = author.getName();
-    String authEmail = author.getEmail();
-    String authUri = author.getUri();
+    KmlLayerMetadata metaData = o.getMetadata();
+//    KmlAuthor author = metaData.getAuthor();
+//    String authName = author.getName();
+//    String authEmail = author.getEmail();
+//    String authUri = author.getUri();
+//    
+//    String desc = metaData.getDescription();
+//    String name = metaData.getName();
+//    String snippet = metaData.getSnippet();
     
-    String desc = right.getDescription();
-    String name = right.getName();
-    String snippet = right.getSnippet();
-    
-    System.out.println("work? authName=" + authName);
+    //System.out.println("work? authName=" + authName);
    
   }
 
