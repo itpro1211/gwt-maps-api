@@ -1,8 +1,10 @@
 package com.gonevertical.maps.testing.client;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import com.gonevertical.apis.googlemaps.client.LoadApi;
+import com.gonevertical.apis.googlemaps.client.LoadApi.LoadLibrary;
 import com.gonevertical.apis.googlemaps.client.MapOptions;
 import com.gonevertical.apis.googlemaps.client.MapTypeId;
 import com.gonevertical.apis.googlemaps.client.MapWidget;
@@ -39,13 +41,23 @@ public class Apis_Maps_Test implements EntryPoint {
   }
  
   private void loadMapApi() {
+    boolean sensor = true;
+    
+    // load all the libs for use
+    ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
+    loadLibraries.add(LoadLibrary.ADSENSE);
+    loadLibraries.add(LoadLibrary.DRAWING);
+    loadLibraries.add(LoadLibrary.GEOMETRY);
+    loadLibraries.add(LoadLibrary.PANORAMIO);
+    loadLibraries.add(LoadLibrary.PLACES);
+    
     Runnable onLoad = new Runnable() {
       public void run() {
         draw();
       }
     };
-    boolean sensor = true;
-    LoadApi.go(onLoad, sensor);
+    
+    LoadApi.go(onLoad, loadLibraries, sensor);
   }
 
   
@@ -56,6 +68,8 @@ public class Apis_Maps_Test implements EntryPoint {
     drawFusionMap();
     
     drawKmlMap();
+    
+    drawMapWcontrols();
     
   }
   
@@ -74,7 +88,10 @@ public class Apis_Maps_Test implements EntryPoint {
     RootPanel.get().add(wMap);
   }
   
-  
+  private void drawMapWcontrols() {
+    ControlsMappingWidget wMap = new ControlsMappingWidget();
+    RootPanel.get().add(wMap);
+  }
   
   
   
@@ -109,7 +126,7 @@ public class Apis_Maps_Test implements EntryPoint {
   private void drawTestMap() {
     
     MapTypeControlOptions mapTypeControlOptions = MapTypeControlOptions.newInstance();
-    mapTypeControlOptions.setControlPosition(ControlPosition.BOTTOM_RIGHT);
+    mapTypeControlOptions.setPosition(ControlPosition.BOTTOM_RIGHT);
     mapTypeControlOptions.setMapTypeIds(MapTypeId.values());
     
     MapOptions options = MapOptions.newInstance();
