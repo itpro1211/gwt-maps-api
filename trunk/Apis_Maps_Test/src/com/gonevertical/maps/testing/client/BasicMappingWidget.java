@@ -3,14 +3,26 @@ package com.gonevertical.maps.testing.client;
 import com.gonevertical.apis.googlemaps.client.MapOptions;
 import com.gonevertical.apis.googlemaps.client.MapTypeId;
 import com.gonevertical.apis.googlemaps.client.MapWidget;
+import com.gonevertical.apis.googlemaps.client.adsense.AdFormat;
+import com.gonevertical.apis.googlemaps.client.adsense.AdUnitOptions;
+import com.gonevertical.apis.googlemaps.client.adsense.AdUnitWidget;
 import com.gonevertical.apis.googlemaps.client.base.LatLng;
 import com.gonevertical.apis.googlemaps.client.base.Size;
+import com.gonevertical.apis.googlemaps.client.controls.ControlPosition;
+import com.gonevertical.apis.googlemaps.client.events.channelnumber.ChannelNumberChangeMapEvent;
+import com.gonevertical.apis.googlemaps.client.events.channelnumber.ChannelNumberChangeMapHandler;
 import com.gonevertical.apis.googlemaps.client.events.click.ClickMapEvent;
 import com.gonevertical.apis.googlemaps.client.events.click.ClickMapHandler;
+import com.gonevertical.apis.googlemaps.client.events.format.FormatChangeMapEvent;
+import com.gonevertical.apis.googlemaps.client.events.format.FormatChangeMapHandler;
 import com.gonevertical.apis.googlemaps.client.events.fusiontablemouse.FusionTablesMouseMapEvent;
 import com.gonevertical.apis.googlemaps.client.events.fusiontablemouse.FusionTablesMouseMapHandler;
 import com.gonevertical.apis.googlemaps.client.events.kmlmouse.KmlMouseMapEvent;
 import com.gonevertical.apis.googlemaps.client.events.kmlmouse.KmlMouseMapHandler;
+import com.gonevertical.apis.googlemaps.client.events.mapchange.MapChangeMapEvent;
+import com.gonevertical.apis.googlemaps.client.events.mapchange.MapChangeMapHandler;
+import com.gonevertical.apis.googlemaps.client.events.position.PositionChangeMapEvent;
+import com.gonevertical.apis.googlemaps.client.events.position.PositionChangeMapHandler;
 import com.gonevertical.apis.googlemaps.client.layers.FusionTablesCell;
 import com.gonevertical.apis.googlemaps.client.layers.FusionTablesLayer;
 import com.gonevertical.apis.googlemaps.client.layers.FusionTablesLayerOptions;
@@ -48,12 +60,14 @@ public class BasicMappingWidget extends Composite {
 
     pWidget.clear();
 
-    pWidget.add(new HTML("<br>Basic Map Example"));
+    pWidget.add(new HTML("<br>Basic Map Example. With an AdUnit"));
 
-    setupMap();
+    drawMap();
+    
+    drawMapAds();
   }
 
-  private void setupMap() {
+  private void drawMap() {
     LatLng center = LatLng.newInstance(49.496675,-102.65625);
     MapOptions opts = MapOptions.newInstance();
     opts.setZoom(4);
@@ -62,7 +76,7 @@ public class BasicMappingWidget extends Composite {
     
     mapWidget = new MapWidget(opts);
     pWidget.add(mapWidget);
-    mapWidget.setSize("500px", "500px");
+    mapWidget.setSize("750px", "500px");
     
     mapWidget.addClickHandler(new ClickMapHandler() {
       public void onEvent(ClickMapEvent event) {
@@ -72,5 +86,37 @@ public class BasicMappingWidget extends Composite {
     });
   }
 
+  private void drawMapAds() {
+    
+    AdUnitOptions options = AdUnitOptions.newInstance();
+    options.setFormat(AdFormat.HALF_BANNER);
+    options.setPosition(ControlPosition.RIGHT_CENTER);
+    options.setMap(mapWidget);
+    options.setPublisherId("pub-0032065764310410");
+    options.setChannelNumber("4000893900");
+    
+    AdUnitWidget adUnit = new AdUnitWidget(options);
+    
+    adUnit.addChannelNumberChangeHandler(new ChannelNumberChangeMapHandler() {
+      public void onEvent(ChannelNumberChangeMapEvent event) { 
+      }
+    });
+    
+    adUnit.addFormatChangeHandler(new FormatChangeMapHandler() {
+      public void onEvent(FormatChangeMapEvent event) {
+      }
+    });
+    
+    adUnit.addMapChangeHandler(new MapChangeMapHandler() {
+      public void onEvent(MapChangeMapEvent event) {
+      }
+    });
+    
+    adUnit.addPositionChangeHandler(new PositionChangeMapHandler() {
+      public void onEvent(PositionChangeMapEvent event) {
+      }
+    });
+
+  }
   
 }
