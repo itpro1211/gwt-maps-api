@@ -60,7 +60,7 @@ public class FusionTablesWidget extends Composite {
     mapWidget = new MapWidget(options);
     pWidget.add(mapWidget);
 
-    mapWidget.setSize("500px", "500px");
+    mapWidget.setSize("750px", "500px");
   }
 
   private void setupFusionTablesLayer() {

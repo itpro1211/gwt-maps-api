@@ -63,7 +63,7 @@ public class KmlWidget extends Composite {
     
     mapWidget = new MapWidget(opts);
     pWidget.add(mapWidget);
-    mapWidget.setSize("500px", "500px");
+    mapWidget.setSize("750px", "500px");
   }
 
   private void setLayer() {
