@@ -22,6 +22,7 @@ import com.gonevertical.apis.googlemaps.client.maptypes.MapTypeStyleFeatureType;
 import com.gonevertical.apis.googlemaps.client.maptypes.Projection;
 import com.gonevertical.apis.googlemaps.client.overlays.Marker;
 import com.gonevertical.apis.googlemaps.client.overlays.MarkerOptions;
+import com.gonevertical.maps.testing.client.maps.AutocompletePlacesMapWidget;
 import com.gonevertical.maps.testing.client.maps.BasicMapWidget;
 import com.gonevertical.maps.testing.client.maps.ControlsMapWidget;
 import com.gonevertical.maps.testing.client.maps.DrawingMapWidget;
@@ -69,6 +70,8 @@ public class Apis_Maps_Test implements EntryPoint {
   
   private void draw() {
 
+    drawAutocomplete();
+    
     drawDrawingMap();
     
     drawBasicMap();
@@ -113,7 +116,10 @@ public class Apis_Maps_Test implements EntryPoint {
     RootPanel.get().add(wMap);
   }
   
-  
+  private void drawAutocomplete() {
+    AutocompletePlacesMapWidget wMap = new AutocompletePlacesMapWidget();
+    RootPanel.get().add(wMap);
+  }
   
 
   private void drawMap() {
