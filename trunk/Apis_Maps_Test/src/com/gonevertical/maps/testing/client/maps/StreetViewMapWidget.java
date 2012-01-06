@@ -49,7 +49,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * 
- * {@link http://code.google.com/apis/maps/documentation/javascript/layers.html#FusionTables}
+ * {@link http://code.google.com/apis/maps/documentation/javascript/streetview.html}
  */
 public class StreetViewMapWidget extends Composite {
 
