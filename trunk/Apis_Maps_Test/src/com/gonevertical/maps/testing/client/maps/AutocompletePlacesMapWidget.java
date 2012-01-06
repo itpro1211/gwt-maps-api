@@ -62,6 +62,8 @@ import com.gonevertical.apis.googlemaps.client.overlays.Rectangle;
 import com.gonevertical.apis.googlemaps.client.placeslib.Autocomplete;
 import com.gonevertical.apis.googlemaps.client.placeslib.AutocompleteOptions;
 import com.gonevertical.apis.googlemaps.client.placeslib.AutocompleteType;
+import com.gonevertical.apis.googlemaps.client.placeslib.PlaceGeometry;
+import com.gonevertical.apis.googlemaps.client.placeslib.PlaceResult;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.dom.client.Element;
@@ -147,6 +149,14 @@ public class AutocompletePlacesMapWidget extends Composite {
     autoComplete.addPlaceChangeHandler(new PlaceChangeMapHandler() {
       public void onEvent(PlaceChangeMapEvent event) {        
         
+        PlaceResult result = autoComplete.getPlace();
+        
+        PlaceGeometry geomtry = result.getGeometry();
+        LatLng center = geomtry.getLocation();
+        
+        mapWidget.setCenter(center);
+        
+        System.out.println("place changed center=" + center);
       }
     });
     
@@ -154,10 +164,12 @@ public class AutocompletePlacesMapWidget extends Composite {
     mapWidget.addBoundsChangeHandler(new BoundsChangeMapHandler() {
       public void onEvent(BoundsChangeMapEvent event) {
         LatLngBounds bounds = mapWidget.getBounds();
-        autoComplete.setbounds(bounds);
+        autoComplete.setBounds(bounds);
       }
     });
   }
+
+
 
   
 
