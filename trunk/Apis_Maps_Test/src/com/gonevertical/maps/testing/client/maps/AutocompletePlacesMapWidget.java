@@ -40,6 +40,8 @@ import com.gonevertical.apis.googlemaps.client.events.overlaycomplete.polyline.P
 import com.gonevertical.apis.googlemaps.client.events.overlaycomplete.polyline.PolylineCompleteMapHandler;
 import com.gonevertical.apis.googlemaps.client.events.overlaycomplete.rectangle.RectangleCompleteMapEvent;
 import com.gonevertical.apis.googlemaps.client.events.overlaycomplete.rectangle.RectangleCompleteMapHandler;
+import com.gonevertical.apis.googlemaps.client.events.place.PlaceChangeMapEvent;
+import com.gonevertical.apis.googlemaps.client.events.place.PlaceChangeMapHandler;
 import com.gonevertical.apis.googlemaps.client.events.position.PositionChangeMapEvent;
 import com.gonevertical.apis.googlemaps.client.events.position.PositionChangeMapHandler;
 import com.gonevertical.apis.googlemaps.client.layers.FusionTablesCell;
@@ -141,6 +143,13 @@ public class AutocompletePlacesMapWidget extends Composite {
     options.setBounds(mapWidget.getBounds());
     
     final Autocomplete autoComplete = Autocomplete.newInstance(element, options);
+    
+    autoComplete.addPlaceChangeHandler(new PlaceChangeMapHandler() {
+      public void onEvent(PlaceChangeMapEvent event) {        
+        
+      }
+    });
+    
     
     mapWidget.addBoundsChangeHandler(new BoundsChangeMapHandler() {
       public void onEvent(BoundsChangeMapEvent event) {
