@@ -69,18 +69,18 @@ public class Apis_Maps_Test implements EntryPoint {
   
   private void draw() {
 
-    
     drawDrawingMap();
     
-    //drawBasicMap();
+    drawBasicMap();
     
-    //drawFusionMap();
+    drawFusionMap();
     
-    //drawKmlMap();
+    drawKmlMap();
     
-    //drawMapWcontrols();
+    drawMapWcontrols();
     
-    //drawPanoramioMap();
+    drawPanoramioMap();
+    
   }
   
   private void drawDrawingMap() {
