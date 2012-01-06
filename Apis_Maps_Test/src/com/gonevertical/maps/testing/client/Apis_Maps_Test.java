@@ -29,6 +29,7 @@ import com.gonevertical.maps.testing.client.maps.DrawingMapWidget;
 import com.gonevertical.maps.testing.client.maps.FusionTablesMapWidget;
 import com.gonevertical.maps.testing.client.maps.KmlMapWidget;
 import com.gonevertical.maps.testing.client.maps.PanoramioMapWidget;
+import com.gonevertical.maps.testing.client.maps.StreetViewMapWidget;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
@@ -70,6 +71,8 @@ public class Apis_Maps_Test implements EntryPoint {
   
   private void draw() {
 
+    drawStreetView();
+    
     drawAutocomplete();
     
     drawDrawingMap();
@@ -84,6 +87,11 @@ public class Apis_Maps_Test implements EntryPoint {
     
     drawPanoramioMap();
     
+  }
+  
+  private void drawStreetView() {
+    StreetViewMapWidget wStreet = new StreetViewMapWidget();
+    RootPanel.get().add(wStreet);
   }
   
   private void drawDrawingMap() {

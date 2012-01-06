@@ -97,7 +97,7 @@ public class AutocompletePlacesMapWidget extends Composite {
 
     pWidget.clear();
     
-    HTML html = new HTML("<br>Map with autocomplete places &nbsp;&nbsp;");
+    HTML html = new HTML("<br><br>Map with autocomplete places &nbsp;&nbsp;");
     tbPlaces = new TextBox();
     tbPlaces.setWidth("350px");
     
@@ -106,6 +106,8 @@ public class AutocompletePlacesMapWidget extends Composite {
     hp.add(tbPlaces);
     
     pWidget.add(hp);
+
+    hp.setCellVerticalAlignment(tbPlaces, HorizontalPanel.ALIGN_BOTTOM);
 
     drawMap();
 
