@@ -1,4 +1,4 @@
-package com.gonevertical.maps.testing.client;
+package com.gonevertical.maps.testing.client.maps;
 
 import com.gonevertical.apis.googlemaps.client.MapOptions;
 import com.gonevertical.apis.googlemaps.client.MapTypeId;
@@ -9,6 +9,7 @@ import com.gonevertical.apis.googlemaps.client.adsense.AdUnitWidget;
 import com.gonevertical.apis.googlemaps.client.base.LatLng;
 import com.gonevertical.apis.googlemaps.client.base.Size;
 import com.gonevertical.apis.googlemaps.client.controls.ControlPosition;
+import com.gonevertical.apis.googlemaps.client.controls.MapTypeControlOptions;
 import com.gonevertical.apis.googlemaps.client.events.channelnumber.ChannelNumberChangeMapEvent;
 import com.gonevertical.apis.googlemaps.client.events.channelnumber.ChannelNumberChangeMapHandler;
 import com.gonevertical.apis.googlemaps.client.events.click.ClickMapEvent;
@@ -43,13 +44,13 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * {@link http://code.google.com/apis/maps/documentation/javascript/layers.html#FusionTables}
  */
-public class BasicMappingWidget extends Composite {
+public class ControlsMapWidget extends Composite {
 
   private VerticalPanel pWidget;
 
   private MapWidget mapWidget;
 
-  public BasicMappingWidget() {
+  public ControlsMapWidget() {
     pWidget = new VerticalPanel();
     initWidget(pWidget);
 
@@ -60,7 +61,7 @@ public class BasicMappingWidget extends Composite {
 
     pWidget.clear();
 
-    pWidget.add(new HTML("<br>Basic Map Example. With an AdUnit"));
+    pWidget.add(new HTML("<br>Basic Map Controls Position Example"));
 
     drawMap();
     
@@ -68,13 +69,19 @@ public class BasicMappingWidget extends Composite {
   }
 
   private void drawMap() {
-    LatLng center = LatLng.newInstance(49.496675,-102.65625);
-    MapOptions opts = MapOptions.newInstance();
-    opts.setZoom(4);
-    opts.setCenter(center);
-    opts.setMapTypeId(MapTypeId.HYBRID);
     
-    mapWidget = new MapWidget(opts);
+    MapTypeControlOptions controlOptions = MapTypeControlOptions.newInstance();
+    controlOptions.setMapTypeIds(MapTypeId.values()); // use all of them
+    controlOptions.setPosition(ControlPosition.RIGHT_CENTER);
+    
+    LatLng center = LatLng.newInstance(49.496675,-102.65625);
+    MapOptions options = MapOptions.newInstance();
+    options.setZoom(4);
+    options.setCenter(center);
+    options.setMapTypeId(MapTypeId.HYBRID);
+    options.setMapTypeControlOptions(controlOptions);
+    
+    mapWidget = new MapWidget(options);
     pWidget.add(mapWidget);
     mapWidget.setSize("750px", "500px");
     
@@ -89,8 +96,8 @@ public class BasicMappingWidget extends Composite {
   private void drawMapAds() {
     
     AdUnitOptions options = AdUnitOptions.newInstance();
-    options.setFormat(AdFormat.HALF_BANNER);
-    options.setPosition(ControlPosition.RIGHT_CENTER);
+    options.setFormat(AdFormat.LEADERBOARD);
+    options.setPosition(ControlPosition.BOTTOM_CENTER);
     options.setMap(mapWidget);
     options.setPublisherId("pub-0032065764310410");
     options.setChannelNumber("4000893900");
