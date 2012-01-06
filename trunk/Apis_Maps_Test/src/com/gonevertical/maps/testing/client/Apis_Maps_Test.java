@@ -22,6 +22,12 @@ import com.gonevertical.apis.googlemaps.client.maptypes.MapTypeStyleFeatureType;
 import com.gonevertical.apis.googlemaps.client.maptypes.Projection;
 import com.gonevertical.apis.googlemaps.client.overlays.Marker;
 import com.gonevertical.apis.googlemaps.client.overlays.MarkerOptions;
+import com.gonevertical.maps.testing.client.maps.BasicMapWidget;
+import com.gonevertical.maps.testing.client.maps.ControlsMapWidget;
+import com.gonevertical.maps.testing.client.maps.DrawingMapWidget;
+import com.gonevertical.maps.testing.client.maps.FusionTablesMapWidget;
+import com.gonevertical.maps.testing.client.maps.KmlMapWidget;
+import com.gonevertical.maps.testing.client.maps.PanoramioMapWidget;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
@@ -63,37 +69,49 @@ public class Apis_Maps_Test implements EntryPoint {
   
   private void draw() {
 
-    drawBasicMap();
     
-    drawFusionMap();
+    drawDrawingMap();
     
-    drawKmlMap();
+    //drawBasicMap();
     
-    drawMapWcontrols();
+    //drawFusionMap();
     
+    //drawKmlMap();
+    
+    //drawMapWcontrols();
+    
+    //drawPanoramioMap();
   }
   
+  private void drawDrawingMap() {
+    DrawingMapWidget wMap = new DrawingMapWidget();
+    RootPanel.get().add(wMap);
+  }
+
   private void drawBasicMap() {
-    BasicMappingWidget wMap = new BasicMappingWidget();
+    BasicMapWidget wMap = new BasicMapWidget();
     RootPanel.get().add(wMap);
   }
  
   private void drawFusionMap() {
-    FusionTablesWidget wMap = new FusionTablesWidget();
+    FusionTablesMapWidget wMap = new FusionTablesMapWidget();
     RootPanel.get().add(wMap);
   }
   
   private void drawKmlMap() {
-    KmlWidget wMap = new KmlWidget();
+    KmlMapWidget wMap = new KmlMapWidget();
     RootPanel.get().add(wMap);
   }
   
   private void drawMapWcontrols() {
-    ControlsMappingWidget wMap = new ControlsMappingWidget();
+    ControlsMapWidget wMap = new ControlsMapWidget();
     RootPanel.get().add(wMap);
   }
   
-  
+  private void drawPanoramioMap() {
+    PanoramioMapWidget wMap = new PanoramioMapWidget();
+    RootPanel.get().add(wMap);
+  }
   
   
   

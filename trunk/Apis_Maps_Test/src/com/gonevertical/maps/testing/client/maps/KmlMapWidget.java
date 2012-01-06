@@ -1,4 +1,4 @@
-package com.gonevertical.maps.testing.client;
+package com.gonevertical.maps.testing.client.maps;
 
 import com.gonevertical.apis.googlemaps.client.MapOptions;
 import com.gonevertical.apis.googlemaps.client.MapTypeId;
@@ -29,13 +29,13 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * {@link http://code.google.com/apis/maps/documentation/javascript/layers.html#FusionTables}
  */
-public class KmlWidget extends Composite {
+public class KmlMapWidget extends Composite {
 
   private VerticalPanel pWidget;
 
   private MapWidget mapWidget;
 
-  public KmlWidget() {
+  public KmlMapWidget() {
     pWidget = new VerticalPanel();
     initWidget(pWidget);
 
