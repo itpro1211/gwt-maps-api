@@ -37,9 +37,14 @@ import com.gonevertical.apis.googlemaps.client.layers.KmlLayerOptions;
 import com.gonevertical.apis.googlemaps.client.panoramiolib.PanoramioFeature;
 import com.gonevertical.apis.googlemaps.client.panoramiolib.PanoramioLayer;
 import com.gonevertical.apis.googlemaps.client.panoramiolib.PanoramioLayerOptions;
+import com.gonevertical.apis.googlemaps.client.streetview.StreetViewLocation;
+import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPanoramaData;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPanoramaOptions;
+import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPanoramaProvider;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPanoramaWidget;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPov;
+import com.gonevertical.apis.googlemaps.client.streetview.StreetViewTileData;
+import com.gonevertical.apis.googlemaps.client.streetview.TileUrlHandler;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.user.client.ui.Composite;
@@ -51,13 +56,13 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * {@link http://code.google.com/apis/maps/documentation/javascript/streetview.html}
  */
-public class StreetViewMapWidget extends Composite {
+public class StreetViewCustomMapWidget extends Composite {
 
   private VerticalPanel pWidget;
 
   private MapWidget mapWidget;
 
-  public StreetViewMapWidget() {
+  public StreetViewCustomMapWidget() {
     pWidget = new VerticalPanel();
     initWidget(pWidget);
 
@@ -68,7 +73,7 @@ public class StreetViewMapWidget extends Composite {
 
     pWidget.clear();
 
-    pWidget.add(new HTML("<br>Street View"));
+    pWidget.add(new HTML("<br>Custom Street View"));
 
     drawStreeView();
    
@@ -76,21 +81,57 @@ public class StreetViewMapWidget extends Composite {
   
   private void drawStreeView() {
    
-    LatLng position = LatLng.newInstance(21.271525, -157.822731);
+    final LatLng position = LatLng.newInstance(21.259758694819777, -157.811758518219);
     
     StreetViewPov pov = StreetViewPov.newInstance();
-    pov.setHeading(250);
-    pov.setZoom(1);
-    pov.setPitch(10);
+    pov.setHeading(0);
+    pov.setZoom(0);
+    pov.setPitch(0);
     
     StreetViewPanoramaOptions options = StreetViewPanoramaOptions.newInstance();
     options.setPosition(position);
     options.setStreeViewPov(pov);
+    options.setVisibile(true);
+    
+    options.setPanoProvider(new StreetViewPanoramaProvider() {
+      public StreetViewPanoramaData getPanoData(String pano, int zoom, int tileX, int tileY) {
+        
+        StreetViewLocation location = StreetViewLocation.newInstance();
+        location.setDescription("Diamond Head Lookout");
+        location.setLatLng(position);
+        location.setPano("diamondheadhike");
+        
+        Size tileSize = Size.newInstance(300, 300);
+        Size worldSize = Size.newInstance(1708, 400);
+        
+        StreetViewTileData tiles = StreetViewTileData.newInstance();
+        tiles.setCenterHeading(0);
+        tiles.setTileSize(tileSize);
+        tiles.setWorldSize(worldSize);
+        tiles.getTileUrl(pano, zoom, tileX, tileY, new TileUrlHandler() {
+          public String getTileUrl(String pano, int zoom, int tileX, int tileY) {
+            zoom = 0; // TODO make a better tiled pano for testing
+            String url = "http://gonevertical-hr.appspot.com/serve?pano=99330&z=" + zoom + "&y=" + tileY + "&x=" + tileX;
+            System.out.println(url);
+            return url;
+          }
+        });
+        
+        StreetViewPanoramaData data = StreetViewPanoramaData.newInstance();
+        data.setCopyright("Brandon Donnelson");
+        data.setStreetViewLocation(location);
+        data.setStreetViewTileData(tiles);
+        
+        return data;
+      }
+    });
     
     StreetViewPanoramaWidget wStreet = new StreetViewPanoramaWidget(options);
     pWidget.add(wStreet);
     wStreet.setSize("750px", "500px");
-  
+    
+    wStreet.setPano("diamondheadhike");
+    
   }
 
   
