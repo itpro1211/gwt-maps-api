@@ -34,21 +34,29 @@ import com.gonevertical.apis.googlemaps.client.layers.KmlFeatureData;
 import com.gonevertical.apis.googlemaps.client.layers.KmlLayer;
 import com.gonevertical.apis.googlemaps.client.layers.KmlLayerMetadata;
 import com.gonevertical.apis.googlemaps.client.layers.KmlLayerOptions;
+import com.gonevertical.apis.googlemaps.client.overlays.Marker;
+import com.gonevertical.apis.googlemaps.client.overlays.MarkerOptions;
 import com.gonevertical.apis.googlemaps.client.panoramiolib.PanoramioFeature;
 import com.gonevertical.apis.googlemaps.client.panoramiolib.PanoramioLayer;
 import com.gonevertical.apis.googlemaps.client.panoramiolib.PanoramioLayerOptions;
+import com.gonevertical.apis.googlemaps.client.streetview.PanoramaByLocationHandler;
+import com.gonevertical.apis.googlemaps.client.streetview.PanoramaIdHandler;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewLocation;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPanoramaData;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPanoramaOptions;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPanoramaProvider;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPanoramaWidget;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewPov;
+import com.gonevertical.apis.googlemaps.client.streetview.StreetViewService;
+import com.gonevertical.apis.googlemaps.client.streetview.StreetViewStatus;
 import com.gonevertical.apis.googlemaps.client.streetview.StreetViewTileData;
 import com.gonevertical.apis.googlemaps.client.streetview.TileUrlHandler;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -56,83 +64,171 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  * {@link http://code.google.com/apis/maps/documentation/javascript/streetview.html}
  */
-public class StreetViewCustomMapWidget extends Composite {
+public class StreetViewSideBySideMapWidget extends Composite {
 
   private VerticalPanel pWidget;
 
+  private HorizontalPanel hp;
+
   private MapWidget mapWidget;
 
-  public StreetViewCustomMapWidget() {
+  private StreetViewPanoramaWidget wStreetPano;
+
+  private StreetViewService service;
+
+  public StreetViewSideBySideMapWidget() {
     pWidget = new VerticalPanel();
     initWidget(pWidget);
 
+    setup();
+    
     draw();
   }
 
-  private void draw() {
+  private void setup() {
+    // setup streetview finding and searching service
+    service = StreetViewService.newInstnace();
+  }
 
+  /**
+   * render the components in the widget
+   */
+  private void draw() {
     pWidget.clear();
 
-    pWidget.add(new HTML("<br>Custom Street View - (For a better demo, I need to re-cut out tiles... later) <a href=\"http://gonevertical-hr.appspot.com/#pano_view~id:110010\" target=\"_blank\">I used tiles from my site here</a>"));
+    pWidget.add(new HTML("<br>Street View Demo - click on the map"));
+
+    hp = new HorizontalPanel();
+    pWidget.add(hp);
+
+    drawMap();
 
     drawStreeView();
-   
+    
+    // allow for things to setup, otherwise getting pano gets null
+    Timer t = new Timer() {
+      public void run() {
+        setupStartingMarker();
+      }
+    };
+    t.schedule(500);
   }
-  
+
+  /**
+   * setup the map on the left
+   */
+  private void drawMap() {
+    LatLng berkley = LatLng.newInstance(21.271525, -157.822731);
+    MapOptions opts = MapOptions.newInstance();
+    opts.setZoom(16);
+    opts.setCenter(berkley);
+    opts.setMapTypeId(MapTypeId.ROADMAP);
+
+    mapWidget = new MapWidget(opts);
+    hp.add(mapWidget);
+    mapWidget.setSize("375px", "500px");
+
+    mapWidget.addClickHandler(new ClickMapHandler() {
+      public void onEvent(ClickMapEvent event) {
+        System.out.println("clicked on latlng=" + event.getMouseEvent().getLatLng());
+        processClick(event.getMouseEvent().getLatLng());
+      }
+    });
+  }
+
+  /**
+   * setup the street view map on the right
+   */
   private void drawStreeView() {
-   
-    final LatLng position = LatLng.newInstance(21.259758694819777, -157.811758518219);
-    
+    LatLng position = LatLng.newInstance(21.271525, -157.822731);
+
     StreetViewPov pov = StreetViewPov.newInstance();
-    pov.setHeading(0);
-    pov.setZoom(0);
-    pov.setPitch(0);
-    
+    pov.setHeading(250);
+    pov.setZoom(1);
+    pov.setPitch(10);
+
     StreetViewPanoramaOptions options = StreetViewPanoramaOptions.newInstance();
     options.setPosition(position);
     options.setStreeViewPov(pov);
-    options.setVisibile(true);
     
-    options.setPanoProvider(new StreetViewPanoramaProvider() {
-      public StreetViewPanoramaData getPanoData(String pano, int zoom, int tileX, int tileY) {
-        
-        StreetViewLocation location = StreetViewLocation.newInstance();
-        location.setDescription("Diamond Head Lookout");
-        location.setLatLng(position);
-        location.setPano("diamondheadhike");
-        
-        Size tileSize = Size.newInstance(300, 300);
-        Size worldSize = Size.newInstance(1708, 400);
-        
-        StreetViewTileData tiles = StreetViewTileData.newInstance();
-        tiles.setCenterHeading(0);
-        tiles.setTileSize(tileSize);
-        tiles.setWorldSize(worldSize);
-        tiles.getTileUrl(pano, zoom, tileX, tileY, new TileUrlHandler() {
-          public String getTileUrl(String pano, int zoom, int tileX, int tileY) {
-            zoom = 0; // TODO make a better tiled pano for testing
-            String url = "http://gonevertical-hr.appspot.com/serve?pano=99330&z=" + zoom + "&y=" + tileY + "&x=" + tileX;
-            System.out.println(url);
-            return url;
-          }
-        });
-        
-        StreetViewPanoramaData data = StreetViewPanoramaData.newInstance();
-        data.setCopyright("Brandon Donnelson");
-        data.setLocation(location);
-        data.setTileData(tiles);
-        
-        return data;
+    wStreetPano = new StreetViewPanoramaWidget(options);
+    hp.add(wStreetPano);
+    wStreetPano.setSize("375px", "500px");
+  }
+
+  private void setupStartingMarker() {
+    String pano = wStreetPano.getPano();
+    if (pano == null) {
+      // TODO hmmmm.... i need a slight delay while everything sets up
+      return;
+    }
+    service.getPanoramaById(pano, new PanoramaIdHandler() {
+      public void onCallback(StreetViewPanoramaData data, StreetViewStatus status) {
+        LatLng latlng = wStreetPano.getPosition();
+        processPanoSearch(latlng, data, status);
+      }
+    });
+  }
+
+  /**
+   * get pano data for nearest position
+   * @param latlng
+   */
+  private void processClick(final LatLng latlng) {
+    double radius = 50;
+    
+    service.getPanoramaByLocation(latlng, radius, new PanoramaByLocationHandler() {
+      public void onCallback(StreetViewPanoramaData data, StreetViewStatus status) {
+        processPanoSearch(latlng, data, status);
+      }
+    });
+  }
+
+  private void processPanoSearch(LatLng latlng, final StreetViewPanoramaData data, StreetViewStatus status) {
+    if (status != StreetViewStatus.OK) {
+      // TODO error
+      return;
+    }
+
+    if (data == null) {
+      // TODO error
+      return;
+    }
+
+    // setup marker for location clicked
+    MarkerOptions options = MarkerOptions.newInstance();
+    options.setClickable(true);
+    options.setPosition(latlng);
+    options.setMap(mapWidget);
+    options.setTitle(data.getLocation().getDescription());
+
+    Marker marker = Marker.newInstance(options);
+
+    // move back on click
+    marker.addClickHandler(new ClickMapHandler() {
+      public void onEvent(ClickMapEvent event) {
+        moveStreetView(data);
       }
     });
     
-    StreetViewPanoramaWidget wStreet = new StreetViewPanoramaWidget(options);
-    pWidget.add(wStreet);
-    wStreet.setSize("750px", "500px");
-    
-    wStreet.setPano("diamondheadhike");
-    
+    // move
+    moveStreetView(data);
   }
 
-  
+  protected void moveStreetView(StreetViewPanoramaData data) {
+    String markerPanoId = data.getLocation().getPano();
+
+    StreetViewPov pov = StreetViewPov.newInstance();
+    pov.setHeading(270);
+    pov.setPitch(0);
+    pov.setZoom(1);
+
+    wStreetPano.setPano(markerPanoId);
+    wStreetPano.setPov(pov);
+    wStreetPano.setVisible(true);
+  }
+
+
+
+
 }
