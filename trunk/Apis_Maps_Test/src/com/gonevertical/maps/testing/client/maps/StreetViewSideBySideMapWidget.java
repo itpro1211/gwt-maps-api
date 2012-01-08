@@ -111,7 +111,7 @@ public class StreetViewSideBySideMapWidget extends Composite {
         setupStartingMarker();
       }
     };
-    t.schedule(500);
+    t.schedule(1500); // b/c this widget is first and I have so many loading on page. 
   }
 
   /**
