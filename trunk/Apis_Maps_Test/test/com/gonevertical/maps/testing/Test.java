@@ -1,7 +1,7 @@
 package com.gonevertical.maps.testing;
 
-import com.gonevertical.apis.googlemaps.client.LoadApi;
 import com.google.gwt.junit.client.GWTTestCase;
+import com.google.gwt.maps.client.LoadApi;
 
 public class Test extends GWTTestCase {
 
