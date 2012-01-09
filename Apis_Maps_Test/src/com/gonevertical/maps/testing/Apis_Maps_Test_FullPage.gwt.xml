@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module rename-to='apis_maps_test'>
+<module rename-to='apis_maps_test_fullpage'>
 
 
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
   
   
-
   <!-- Inherit the default GWT style sheet.  				      -->
   
   
@@ -16,7 +15,7 @@
 
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='com.gonevertical.maps.testing.client.Apis_Maps_Test'/>
+  <entry-point class='com.gonevertical.maps.testing.client.Apis_Maps_Test_FullPage'/>
 
 
   <!-- Specify the paths for translatable code                    -->
