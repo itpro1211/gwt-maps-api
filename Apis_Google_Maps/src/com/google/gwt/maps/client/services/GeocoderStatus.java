@@ -1,7 +1,5 @@
 package com.google.gwt.maps.client.services;
 
-import com.google.gwt.maps.client.streetview.StreetViewStatus;
-
 /**
  * The status returned by the Geocoder on the completion of a call to geocode().
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#GeocoderStatus}
