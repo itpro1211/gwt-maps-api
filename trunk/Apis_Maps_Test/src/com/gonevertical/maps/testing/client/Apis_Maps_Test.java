@@ -30,6 +30,7 @@ import com.google.gwt.maps.client.overlays.Marker;
 import com.google.gwt.maps.client.overlays.MarkerOptions;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**
@@ -65,6 +66,9 @@ public class Apis_Maps_Test implements EntryPoint {
 
   
   private void draw() {
+    
+    HTML html = new HTML("<a href=\"Apis_Maps_Test_FullPage.html\">See 100% Map Demo</a><br/><br/>");
+    RootPanel.get().add(html);
 
     drawStreetViewSideBySide();
     
