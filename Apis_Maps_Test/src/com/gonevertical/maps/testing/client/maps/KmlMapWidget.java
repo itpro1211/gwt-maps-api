@@ -1,28 +1,17 @@
 package com.gonevertical.maps.testing.client.maps;
 
-import com.gonevertical.apis.googlemaps.client.MapOptions;
-import com.gonevertical.apis.googlemaps.client.MapTypeId;
-import com.gonevertical.apis.googlemaps.client.MapWidget;
-import com.gonevertical.apis.googlemaps.client.base.LatLng;
-import com.gonevertical.apis.googlemaps.client.base.Size;
-import com.gonevertical.apis.googlemaps.client.events.fusiontablemouse.FusionTablesMouseMapEvent;
-import com.gonevertical.apis.googlemaps.client.events.fusiontablemouse.FusionTablesMouseMapHandler;
-import com.gonevertical.apis.googlemaps.client.events.kmlmouse.KmlMouseMapEvent;
-import com.gonevertical.apis.googlemaps.client.events.kmlmouse.KmlMouseMapHandler;
-import com.gonevertical.apis.googlemaps.client.layers.FusionTablesCell;
-import com.gonevertical.apis.googlemaps.client.layers.FusionTablesLayer;
-import com.gonevertical.apis.googlemaps.client.layers.FusionTablesLayerOptions;
-import com.gonevertical.apis.googlemaps.client.layers.FusionTablesQuery;
-import com.gonevertical.apis.googlemaps.client.layers.KmlAuthor;
-import com.gonevertical.apis.googlemaps.client.layers.KmlFeatureData;
-import com.gonevertical.apis.googlemaps.client.layers.KmlLayer;
-import com.gonevertical.apis.googlemaps.client.layers.KmlLayerMetadata;
-import com.gonevertical.apis.googlemaps.client.layers.KmlLayerOptions;
-import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.core.client.JsArray;
+import com.google.gwt.maps.client.MapOptions;
+import com.google.gwt.maps.client.MapTypeId;
+import com.google.gwt.maps.client.MapWidget;
+import com.google.gwt.maps.client.base.LatLng;
+import com.google.gwt.maps.client.base.Size;
+import com.google.gwt.maps.client.events.kmlmouse.KmlMouseMapEvent;
+import com.google.gwt.maps.client.events.kmlmouse.KmlMouseMapHandler;
+import com.google.gwt.maps.client.layers.KmlFeatureData;
+import com.google.gwt.maps.client.layers.KmlLayer;
+import com.google.gwt.maps.client.layers.KmlLayerMetadata;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
