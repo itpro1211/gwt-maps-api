@@ -11,7 +11,7 @@ public class SphericalUtils {
    * @param loop
    * @return
    */
-  public static final native int computeArea(JsArray<LatLng> loop) /*-{
+  public static final native double computeArea(JsArray<LatLng> loop) /*-{
     return $wnd.google.maps.geometry.spherical.computeArea(loop);
   }-*/;
   
@@ -20,7 +20,7 @@ public class SphericalUtils {
    * @param loop
    * @return
    */
-  public static final native int computeArea(MVCArray<LatLng> loop) /*-{
+  public static final native double computeArea(MVCArray<LatLng> loop) /*-{
     return $wnd.google.maps.geometry.spherical.computeArea(loop);
   }-*/;
   
@@ -30,7 +30,7 @@ public class SphericalUtils {
    * @param radius
    * @return
    */
-  public static final native int computeArea(JsArray<LatLng> loop, int radius) /*-{
+  public static final native double computeArea(JsArray<LatLng> loop, int radius) /*-{
     return $wnd.google.maps.geometry.spherical.computeArea(loop, radius);
   }-*/;
   
@@ -40,7 +40,7 @@ public class SphericalUtils {
    * @param radius
    * @return
    */
-  public static final native int computeArea(MVCArray<LatLng> loop, int radius) /*-{
+  public static final native double computeArea(MVCArray<LatLng> loop, int radius) /*-{
     return $wnd.google.maps.geometry.spherical.computeArea(loop, radius);
   }-*/;
   
@@ -50,7 +50,7 @@ public class SphericalUtils {
    * @param to
    * @return
    */
-  public static final native int computeDistanceBetween(LatLng from, LatLng to) /*-{
+  public static final native double computeDistanceBetween(LatLng from, LatLng to) /*-{
     return $wnd.google.maps.geometry.spherical.computeDistanceBetween(from, to);
   }-*/;
   
@@ -61,7 +61,7 @@ public class SphericalUtils {
    * @param radius
    * @return
    */
-  public static final native int computeDistanceBetween(LatLng from, LatLng to, int radius) /*-{
+  public static final native double computeDistanceBetween(LatLng from, LatLng to, int radius) /*-{
     return $wnd.google.maps.geometry.spherical.computeDistanceBetween(from, to, radius);
   }-*/;
   
@@ -71,7 +71,7 @@ public class SphericalUtils {
    * @param to
    * @return
    */
-  public static final native int computeHeading(LatLng from, LatLng to) /*-{
+  public static final native double computeHeading(LatLng from, LatLng to) /*-{
     return $wnd.google.maps.geometry.spherical.computeHeading(from, to);
   }-*/;
   
@@ -80,7 +80,7 @@ public class SphericalUtils {
    * @param path
    * @return
    */
-  public static final native int computeLength(JsArray<LatLng> path) /*-{
+  public static final native double computeLength(JsArray<LatLng> path) /*-{
     return $wnd.google.maps.geometry.spherical.computeLength(path);
   }-*/;
   
@@ -89,7 +89,7 @@ public class SphericalUtils {
    * @param path
    * @return
    */
-  public static final native int computeLength(MVCArray<LatLng> path) /*-{
+  public static final native double computeLength(MVCArray<LatLng> path) /*-{
     return $wnd.google.maps.geometry.spherical.computeLength(path);
   }-*/;
   
@@ -99,7 +99,7 @@ public class SphericalUtils {
    * @param radius
    * @return
    */
-  public static final native int computeLength(JsArray<LatLng> path, int radius) /*-{
+  public static final native double computeLength(JsArray<LatLng> path, int radius) /*-{
     return $wnd.google.maps.geometry.spherical.computeLength(path, radius);
   }-*/;
   
@@ -109,7 +109,7 @@ public class SphericalUtils {
    * @param radius
    * @return
    */
-  public static final native int computeLength(MVCArray<LatLng> path, int radius) /*-{
+  public static final native double computeLength(MVCArray<LatLng> path, int radius) /*-{
     return $wnd.google.maps.geometry.spherical.computeLength(path, radius);
   }-*/;
   
@@ -141,7 +141,7 @@ public class SphericalUtils {
    * @param loop
    * @return
    */
-  public static final native int computeSignedArea(JsArray<LatLng> loop) /*-{
+  public static final native double computeSignedArea(JsArray<LatLng> loop) /*-{
     return $wnd.google.maps.geometry.spherical.computeSignedArea(loop);
   }-*/;
   
@@ -150,7 +150,7 @@ public class SphericalUtils {
    * @param loop
    * @return
    */
-  public static final native int computeSignedArea(MVCArray<LatLng> loop) /*-{
+  public static final native double computeSignedArea(MVCArray<LatLng> loop) /*-{
     return $wnd.google.maps.geometry.spherical.computeSignedArea(loop);
   }-*/;
   
@@ -160,7 +160,7 @@ public class SphericalUtils {
    * @param radius
    * @return
    */
-  public static final native int computeSignedArea(JsArray<LatLng> loop, int radius) /*-{
+  public static final native double computeSignedArea(JsArray<LatLng> loop, int radius) /*-{
     return $wnd.google.maps.geometry.spherical.computeSignedArea(loop, radius);
   }-*/;
   
@@ -170,7 +170,7 @@ public class SphericalUtils {
    * @param radius
    * @return
    */
-  public static final native int computeSignedArea(MVCArray<LatLng> loop, int radius) /*-{
+  public static final native double computeSignedArea(MVCArray<LatLng> loop, int radius) /*-{
     return $wnd.google.maps.geometry.spherical.computeSignedArea(loop, radius);
   }-*/;
   
