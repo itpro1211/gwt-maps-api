@@ -94,6 +94,7 @@ import com.google.gwt.maps.client.service.GeocoderLocationTypeTest;
 import com.google.gwt.maps.client.service.GeocoderRequestTest;
 import com.google.gwt.maps.client.service.GeocoderResultTest;
 import com.google.gwt.maps.client.service.GeocoderStatusTest;
+import com.google.gwt.maps.client.service.GeocoderTest;
 import com.google.gwt.maps.client.streetview.StreetViewAddressControlOptionsTest;
 import com.google.gwt.maps.client.streetview.StreetViewControlOptionsTest;
 import com.google.gwt.maps.client.streetview.StreetViewLinkTest;
@@ -227,6 +228,7 @@ public class MapsTestSuite extends GWTTestSuite {
     suite.addTestSuite(GeocoderResultTest.class);
     suite.addTestSuite(GeocoderLocationTypeTest.class);
     suite.addTestSuite(GeocoderGeometryTest.class);
+    suite.addTestSuite(GeocoderTest.class);
     
     return suite;
   }
