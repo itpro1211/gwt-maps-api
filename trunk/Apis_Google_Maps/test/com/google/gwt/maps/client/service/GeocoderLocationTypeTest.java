@@ -57,7 +57,7 @@ public class GeocoderLocationTypeTest extends GWTTestCase {
       public void run() {
         GeocoderLocationType o = GeocoderLocationType.RANGE_INTERPOLATED;
         assertEquals("range_interpolated", o.value());
-        assertEquals(GeocoderLocationType.RANGE_INTERPOLATED, GeocoderStatus.fromValue("range_interpolated"));
+        assertEquals(GeocoderLocationType.RANGE_INTERPOLATED, GeocoderLocationType.fromValue("range_interpolated"));
         finishTest();
       }
     }, loadLibraries , sensor);
@@ -71,7 +71,7 @@ public class GeocoderLocationTypeTest extends GWTTestCase {
       public void run() {
         GeocoderLocationType o = GeocoderLocationType.ROOFTOP;
         assertEquals("rooftop", o.value());
-        assertEquals(GeocoderLocationType.ROOFTOP, GeocoderStatus.fromValue("rooftop"));
+        assertEquals(GeocoderLocationType.ROOFTOP, GeocoderLocationType.fromValue("rooftop"));
         finishTest();
       }
     }, loadLibraries , sensor);
