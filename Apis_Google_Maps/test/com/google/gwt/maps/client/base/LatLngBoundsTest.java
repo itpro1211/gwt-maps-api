@@ -27,13 +27,26 @@ public class LatLngBoundsTest extends GWTTestCase {
       public void run() {
         LatLng sw = LatLng.newInstance(new BigDecimal(-31.203405), new BigDecimal(125.244141));
         LatLng ne = LatLng.newInstance(new BigDecimal(-25.363882), new BigDecimal(131.044922));
-        LatLngBounds llb = LatLngBounds.newInstance(sw, ne);
+        LatLngBounds left = LatLngBounds.newInstance(sw, ne);
         finishTest();
       }
     }, false);
     delayTestFinish(ASYNC_DELAY_MS);
   }
 
+  public void testUse2() {
+    LoadApi.go(new Runnable() {
+      public void run() {
+        LatLng sw = LatLng.newInstance(-31.203405,125.244141);
+        LatLng ne = LatLng.newInstance(-25.363882, 131.044922);
+        LatLngBounds left = LatLngBounds.newInstance(sw, ne);
+        assertEquals("((-31.203405, 125.24414100000001), (-25.363882, 131.04492200000004))", left.getToString());
+        finishTest();
+      }
+    }, false);
+    delayTestFinish(ASYNC_DELAY_MS);
+  }
+  
   public void testContains() {
     LoadApi.go(new Runnable() {
       public void run() {

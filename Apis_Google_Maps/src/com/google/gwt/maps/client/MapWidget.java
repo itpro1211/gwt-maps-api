@@ -39,6 +39,11 @@ public class MapWidget extends Widget {
    */
   private MapImpl impl;
 
+  /**
+   * reconstruct the mapWidget from jso
+   * @param impl
+   * @return
+   */
   public static MapWidget newInstance(MapImpl impl) {
     return new MapWidget(impl);
   }

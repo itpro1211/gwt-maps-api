@@ -89,6 +89,11 @@ import com.google.gwt.maps.client.placelib.PlaceResultTest;
 import com.google.gwt.maps.client.placelib.PlaceServiceStatusTest;
 import com.google.gwt.maps.client.placelib.PlacesServiceTest;
 import com.google.gwt.maps.client.service.GeocoderAddressComponentTest;
+import com.google.gwt.maps.client.service.GeocoderGeometryTest;
+import com.google.gwt.maps.client.service.GeocoderLocationTypeTest;
+import com.google.gwt.maps.client.service.GeocoderRequestTest;
+import com.google.gwt.maps.client.service.GeocoderResultTest;
+import com.google.gwt.maps.client.service.GeocoderStatusTest;
 import com.google.gwt.maps.client.streetview.StreetViewAddressControlOptionsTest;
 import com.google.gwt.maps.client.streetview.StreetViewControlOptionsTest;
 import com.google.gwt.maps.client.streetview.StreetViewLinkTest;
@@ -217,8 +222,11 @@ public class MapsTestSuite extends GWTTestSuite {
     suite.addTestSuite(PlacesServiceTest.class);
     suite.addTestSuite(StreetViewPanoramaImplTest.class);
     suite.addTestSuite(StreetViewServiceTest.class);
-    
-    
+    suite.addTestSuite(GeocoderStatusTest.class);
+    suite.addTestSuite(GeocoderRequestTest.class);
+    suite.addTestSuite(GeocoderResultTest.class);
+    suite.addTestSuite(GeocoderLocationTypeTest.class);
+    suite.addTestSuite(GeocoderGeometryTest.class);
     
     return suite;
   }
