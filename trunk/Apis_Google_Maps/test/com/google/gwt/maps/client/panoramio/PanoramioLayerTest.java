@@ -152,7 +152,7 @@ public class PanoramioLayerTest extends GWTTestCase {
         assertEquals("2597317", tag);
         
         pano.setUserId("4128216");
-        assertEquals("arlington", pano.getTag());
+        assertEquals("hawaii", pano.getTag());
 
         finishTest();
       }
