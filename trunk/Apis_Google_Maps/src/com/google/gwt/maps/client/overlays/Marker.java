@@ -289,7 +289,7 @@ public class Marker extends JavaScriptObject {
   }
 
   private final native void setMapImpl(MapImpl map) /*-{
-    this.map = map;
+    this.setMap(map);
   }-*/;
   
   /**
