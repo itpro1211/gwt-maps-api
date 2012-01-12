@@ -8,16 +8,23 @@ import com.google.gwt.maps.client.adsense.AdUnitOptions;
 import com.google.gwt.maps.client.adsense.AdUnitWidget;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.controls.ControlPosition;
+import com.google.gwt.maps.client.events.MouseEvent;
 import com.google.gwt.maps.client.events.channelnumber.ChannelNumberChangeMapEvent;
 import com.google.gwt.maps.client.events.channelnumber.ChannelNumberChangeMapHandler;
 import com.google.gwt.maps.client.events.click.ClickMapEvent;
 import com.google.gwt.maps.client.events.click.ClickMapHandler;
+import com.google.gwt.maps.client.events.clickable.ClickableChangeMapEvent;
+import com.google.gwt.maps.client.events.clickable.ClickableChangeMapHandler;
 import com.google.gwt.maps.client.events.format.FormatChangeMapEvent;
 import com.google.gwt.maps.client.events.format.FormatChangeMapHandler;
 import com.google.gwt.maps.client.events.mapchange.MapChangeMapEvent;
 import com.google.gwt.maps.client.events.mapchange.MapChangeMapHandler;
 import com.google.gwt.maps.client.events.position.PositionChangeMapEvent;
 import com.google.gwt.maps.client.events.position.PositionChangeMapHandler;
+import com.google.gwt.maps.client.overlays.InfoWindow;
+import com.google.gwt.maps.client.overlays.InfoWindowOptions;
+import com.google.gwt.maps.client.overlays.Marker;
+import com.google.gwt.maps.client.overlays.MarkerOptions;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -48,6 +55,37 @@ public class BasicMapWidget extends Composite {
     drawMap();
     
     drawMapAds();
+    
+    drawMarker();
+  }
+
+  private void drawMarker() {
+    LatLng center = LatLng.newInstance(47.8, -121.4);
+    MarkerOptions options = MarkerOptions.newInstance();
+    options.setPosition(center);
+    options.setTitle("Hello World");
+    
+    final Marker marker = Marker.newInstance(options);
+    marker.setMap(mapWidget);
+    
+    marker.addClickHandler(new ClickMapHandler() {
+      public void onEvent(ClickMapEvent event) {
+        drawInfoWindow(marker, event.getMouseEvent());
+      }
+    });
+  }
+
+  protected void drawInfoWindow(Marker marker, MouseEvent mouseEvent) {
+    if (marker == null || mouseEvent == null) {
+      return;
+    }
+    
+    HTML html = new HTML("You clicked on: " + mouseEvent.getLatLng().getToString());
+    
+    InfoWindowOptions options = InfoWindowOptions.newInstance();
+    options.setContentWidget(html);
+    InfoWindow iw = InfoWindow.newInstance(options);
+    iw.open(mapWidget, marker);
   }
 
   private void drawMap() {
