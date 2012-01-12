@@ -286,7 +286,11 @@ public class Marker extends MVCObject<Marker> {
    * @param map
    */
   public final void setMap(MapWidget mapWidget) {
-    setMapImpl(mapWidget.getJso());
+    if (mapWidget == null) {
+      setMapImpl((MapImpl) null);
+    } else {
+      setMapImpl(mapWidget.getJso());
+    }
   }
 
   private final native void setMapImpl(MapImpl map) /*-{
