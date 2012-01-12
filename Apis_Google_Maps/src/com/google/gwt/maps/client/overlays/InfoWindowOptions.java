@@ -4,6 +4,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.Size;
+import com.google.gwt.user.client.ui.Widget;
 
 /** 
  * InfoWindow Options
@@ -22,6 +23,14 @@ public class InfoWindowOptions extends JavaScriptObject {
    */
   public static final InfoWindowOptions newInstance() {
     return JavaScriptObject.createObject().cast();
+  }
+  
+  /**
+   * set widget to display in infoWindow
+   * @param widget
+   */
+  public final void setContentWidget(Widget widget) {
+    setContent(widget.getElement());
   }
   
   /**

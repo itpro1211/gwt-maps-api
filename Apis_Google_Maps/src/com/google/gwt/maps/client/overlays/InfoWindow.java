@@ -102,12 +102,20 @@ public class InfoWindow extends JavaScriptObject {
   public final void open(MapWidget mapWidget, MVCObject<?> anchor) {
     open(mapWidget.getJso(), anchor);
   }
+  
+  public final <T> void open(MapWidget mapWidget, Marker anchor) {
+    open(mapWidget.getJso(), anchor);
+  }
 
   private final native void open(MapImpl impl) /*-{
     this.open(impl);
   }-*/;
   
   private final native void open(MapImpl impl, MVCObject<?> anchor) /*-{
+    this.open(impl, anchor);
+  }-*/;
+  
+  private final native void open(MapImpl impl, JavaScriptObject anchor) /*-{
     this.open(impl, anchor);
   }-*/;
   
