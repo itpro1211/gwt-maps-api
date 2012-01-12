@@ -287,7 +287,7 @@ public class Marker extends MVCObject<Marker> {
    */
   public final void setMap(MapWidget mapWidget) {
     if (mapWidget == null) {
-      setMapImpl((MapImpl) null);
+      close();
     } else {
       setMapImpl(mapWidget.getJso());
     }
@@ -578,5 +578,9 @@ public class Marker extends MVCObject<Marker> {
   public final HandlerRegistration addZindexChangeHandler(ZindexChangeMapHandler handler) {
     return MapHandlerRegistration.addHandler(this, MapEventType.ZINDEX_CHANGED, handler, new ZindexChangeEventFormatter());
   }
+
+  public final native void close() /*-{
+    this.setMap();
+  }-*/;
   
 }
