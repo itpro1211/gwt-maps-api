@@ -21,6 +21,7 @@ import com.google.gwt.maps.client.events.zindex.ZindexChangeMapHandler;
 import com.google.gwt.maps.client.mvc.MVCObject;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaWidget;
+import com.google.gwt.user.client.ui.Widget;
 
 /**
  * An overlay that looks like a bubble and is often connected to a marker. This class extends MVCObject.
@@ -140,6 +141,10 @@ public class InfoWindow extends MVCObject<InfoWindow> {
     this.open(impl, anchor);
   }-*/;
     
+  public final void setContent(Widget widget) {
+    setContent(widget.getElement());
+  }
+  
   /**
    * set Content
    * @param content

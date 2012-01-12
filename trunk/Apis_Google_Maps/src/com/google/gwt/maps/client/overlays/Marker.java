@@ -579,6 +579,9 @@ public class Marker extends MVCObject<Marker> {
     return MapHandlerRegistration.addHandler(this, MapEventType.ZINDEX_CHANGED, handler, new ZindexChangeEventFormatter());
   }
 
+  /**
+   * close the marker 
+   */
   public final native void close() /*-{
     this.setMap();
   }-*/;

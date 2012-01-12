@@ -29,7 +29,7 @@ public class InfoWindowOptions extends JavaScriptObject {
    * set widget to display in infoWindow
    * @param widget
    */
-  public final void setContentWidget(Widget widget) {
+  public final void setContent(Widget widget) {
     setContent(widget.getElement());
   }
   
