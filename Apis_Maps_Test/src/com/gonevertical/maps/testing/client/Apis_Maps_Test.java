@@ -7,6 +7,7 @@ import com.gonevertical.maps.testing.client.maps.BasicMapWidget;
 import com.gonevertical.maps.testing.client.maps.ControlsMapWidget;
 import com.gonevertical.maps.testing.client.maps.DrawingMapWidget;
 import com.gonevertical.maps.testing.client.maps.FusionTablesMapWidget;
+import com.gonevertical.maps.testing.client.maps.InfoWindowMapWidget;
 import com.gonevertical.maps.testing.client.maps.KmlMapWidget;
 import com.gonevertical.maps.testing.client.maps.PanoramioMapWidget;
 import com.gonevertical.maps.testing.client.maps.StreetViewCustomMapWidget;
@@ -70,6 +71,8 @@ public class Apis_Maps_Test implements EntryPoint {
     HTML html = new HTML("<a href=\"Apis_Maps_Test_FullPage.html\">See 100% Map Demo</a><br/><br/>");
     RootPanel.get().add(html);
 
+    drawInfoWindowMap();
+    
     drawStreetViewSideBySide();
     
     drawStreetViewCustom();
@@ -90,6 +93,11 @@ public class Apis_Maps_Test implements EntryPoint {
     
     drawPanoramioMap();
     
+  }
+  
+  private void drawInfoWindowMap() {
+    InfoWindowMapWidget wMap = new InfoWindowMapWidget();
+    RootPanel.get().add(wMap);
   }
   
   private void drawStreetViewSideBySide() {
