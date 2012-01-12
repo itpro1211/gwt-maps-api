@@ -10,12 +10,13 @@ import com.google.gwt.maps.client.events.MapEventType;
 import com.google.gwt.maps.client.events.MapHandlerRegistration;
 import com.google.gwt.maps.client.events.place.PlaceChangeEventFormatter;
 import com.google.gwt.maps.client.events.place.PlaceChangeMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * A service to provide Place predictions based on a user's text input. It attaches to an input element of type text, and listens for text entry in that field. The list of predictions is presented as a drop-down list, and is updated as text is entered. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#Autocomplete}
  */
-public class Autocomplete extends JavaScriptObject {
+public class Autocomplete extends MVCObject<Autocomplete> {
 
   private static final native JavaScriptObject createJso(Element inputField, AutocompleteOptions options) /*-{
     return new $wnd.google.maps.places.Autocomplete(inputField, options);

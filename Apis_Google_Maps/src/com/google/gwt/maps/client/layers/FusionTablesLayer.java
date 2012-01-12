@@ -8,12 +8,13 @@ import com.google.gwt.maps.client.events.MapEventType;
 import com.google.gwt.maps.client.events.MapHandlerRegistration;
 import com.google.gwt.maps.client.events.fusiontablemouse.FusionTablesMouseEventFormatter;
 import com.google.gwt.maps.client.events.fusiontablemouse.FusionTablesMouseMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * A FusionTablesLayer allows you to display data from a Google Fusion Table on a map, as a rendered layer. (See http://code.google.com/apis/fusiontables for more information about Fusion Tables). Table data can be queried using the same query language as is used in the Fusion Tables API. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#FusionTablesLayer}
  */
-public class FusionTablesLayer extends JavaScriptObject {
+public class FusionTablesLayer extends MVCObject<FusionTablesLayer> {
   
   /**
    * use newInstance();

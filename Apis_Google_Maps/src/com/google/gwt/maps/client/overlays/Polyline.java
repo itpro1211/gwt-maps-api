@@ -25,12 +25,13 @@ import com.google.gwt.maps.client.events.mouseup.MouseUpMapHandler;
 import com.google.gwt.maps.client.events.rightclick.RightClickEventFormatter;
 import com.google.gwt.maps.client.events.rightclick.RightClickMapHandler;
 import com.google.gwt.maps.client.mvc.MVCArray;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * A polyline is a linear overlay of connected line segments on the map. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#Polyline} 
  */
-public class Polyline extends JavaScriptObject {
+public class Polyline extends MVCObject<Polyline> {
 
   /**
    * use newInstance();

@@ -3,12 +3,13 @@ package com.google.gwt.maps.client.layers;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.maps.client.MapImpl;
 import com.google.gwt.maps.client.MapWidget;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * A layer showing bike lanes and paths. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#BicyclingLayer}
  */
-public class BicyclingLayer extends JavaScriptObject {
+public class BicyclingLayer extends MVCObject<BicyclingLayer> {
 
   /**
    * use newInstance();

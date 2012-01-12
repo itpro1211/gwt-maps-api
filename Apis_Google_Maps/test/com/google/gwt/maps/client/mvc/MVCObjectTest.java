@@ -20,7 +20,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testUse() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject(); 
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject(); 
         finishTest();
       }
     }, false);
@@ -34,7 +34,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testBindTo() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject();
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject();
 
         finishTest();
       }
@@ -45,7 +45,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testChanged() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject();
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject();
         
         
         finishTest();
@@ -57,7 +57,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testGet() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject();
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject();
         
         
         finishTest();
@@ -69,7 +69,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testNotify() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject();
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject();
         
         
         finishTest();
@@ -81,7 +81,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testSet() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject();
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject();
         
         
         finishTest();
@@ -93,7 +93,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testSetValues() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject();
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject();
         
         
         finishTest();
@@ -105,7 +105,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testUnbind() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject();
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject();
         
         
         finishTest();
@@ -117,7 +117,7 @@ public class MVCObjectTest extends GWTTestCase {
   public void testUnbindAll() {
     LoadApi.go(new Runnable() {
       public void run() {
-        MVCObject<Element> o = MVCObject.newInstanceOfMVCObject();
+        MVCObject<Element> o = MVCObject.createInstanceOfMVCObject();
         
         
         finishTest();

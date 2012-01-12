@@ -65,7 +65,6 @@ import com.google.gwt.maps.client.overlays.InfoWindowTest;
 import com.google.gwt.maps.client.overlays.MapCanvasProjectionTest;
 import com.google.gwt.maps.client.overlays.MapPanesTest;
 import com.google.gwt.maps.client.overlays.MarkerImageTest;
-import com.google.gwt.maps.client.overlays.MarkerImplTest;
 import com.google.gwt.maps.client.overlays.MarkerOptionsTest;
 import com.google.gwt.maps.client.overlays.MarkerShapeTest;
 import com.google.gwt.maps.client.overlays.MarkerShapeTypeTest;
@@ -88,6 +87,9 @@ import com.google.gwt.maps.client.placelib.PlaceGeomtryTest;
 import com.google.gwt.maps.client.placelib.PlaceResultTest;
 import com.google.gwt.maps.client.placelib.PlaceServiceStatusTest;
 import com.google.gwt.maps.client.placelib.PlacesServiceTest;
+import com.google.gwt.maps.client.service.DirectionsStepTest;
+import com.google.gwt.maps.client.service.DistanceTest;
+import com.google.gwt.maps.client.service.DurationTest;
 import com.google.gwt.maps.client.service.GeocoderAddressComponentTest;
 import com.google.gwt.maps.client.service.GeocoderGeometryTest;
 import com.google.gwt.maps.client.service.GeocoderLocationTypeTest;
@@ -95,6 +97,7 @@ import com.google.gwt.maps.client.service.GeocoderRequestTest;
 import com.google.gwt.maps.client.service.GeocoderResultTest;
 import com.google.gwt.maps.client.service.GeocoderStatusTest;
 import com.google.gwt.maps.client.service.GeocoderTest;
+import com.google.gwt.maps.client.service.TravelModeTest;
 import com.google.gwt.maps.client.streetview.StreetViewAddressControlOptionsTest;
 import com.google.gwt.maps.client.streetview.StreetViewControlOptionsTest;
 import com.google.gwt.maps.client.streetview.StreetViewLinkTest;
@@ -165,7 +168,6 @@ public class MapsTestSuite extends GWTTestSuite {
     suite.addTestSuite(AnimationTest.class);  
     suite.addTestSuite(MarkerOptionsTest.class);
     suite.addTestSuite(MarkerTest.class);
-    suite.addTestSuite(MarkerImplTest.class);
     suite.addTestSuite(InfoWindowOptionsTest.class);
     suite.addTestSuite(InfoWindowTest.class);
     suite.addTestSuite(InfoWindowTest.class);
@@ -229,6 +231,10 @@ public class MapsTestSuite extends GWTTestSuite {
     suite.addTestSuite(GeocoderLocationTypeTest.class);
     suite.addTestSuite(GeocoderGeometryTest.class);
     suite.addTestSuite(GeocoderTest.class);
+    suite.addTestSuite(DistanceTest.class);
+    suite.addTestSuite(DurationTest.class);
+    suite.addTestSuite(TravelModeTest.class);
+    suite.addTestSuite(DirectionsStepTest.class);
     
     return suite;
   }

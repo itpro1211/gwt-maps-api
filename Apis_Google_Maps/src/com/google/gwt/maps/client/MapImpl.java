@@ -48,14 +48,14 @@ import com.google.gwt.maps.client.events.zoom.ZoomChangeMapHandler;
 import com.google.gwt.maps.client.maptypes.MapTypeRegistry;
 import com.google.gwt.maps.client.maptypes.Projection;
 import com.google.gwt.maps.client.mvc.MVCArray;
+import com.google.gwt.maps.client.mvc.MVCObject;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
 
 /**
- * This class extends MVCObject. -> TODO
- * 
+ * Creates a new map inside of the given HTML container, which is typically a DIV element
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#Map}
  */
-public class MapImpl extends JavaScriptObject {
+public class MapImpl extends MVCObject<MapImpl> {
   
   /**
    * Creates a new map inside of the given HTML container, which is typically a DIV element.

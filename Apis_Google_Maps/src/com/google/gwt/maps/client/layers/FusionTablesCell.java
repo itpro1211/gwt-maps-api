@@ -1,12 +1,13 @@
 package com.google.gwt.maps.client.layers;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * Describes a single cell from a Fusion Tables table. 
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#FusionTablesCell}
  */
-public class FusionTablesCell extends JavaScriptObject {
+public class FusionTablesCell extends MVCObject<FusionTablesCell> {
   
   /**
    * created from event

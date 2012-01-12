@@ -51,6 +51,7 @@ import com.google.gwt.maps.client.events.visible.VisibleChangeEventFormatter;
 import com.google.gwt.maps.client.events.visible.VisibleChangeMapHandler;
 import com.google.gwt.maps.client.events.zindex.ZindexChangeEventFormatter;
 import com.google.gwt.maps.client.events.zindex.ZindexChangeMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObject;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaWidget;
 
@@ -59,7 +60,7 @@ import com.google.gwt.maps.client.streetview.StreetViewPanoramaWidget;
  * This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#Marker}
  */
-public class Marker extends JavaScriptObject {
+public class Marker extends MVCObject<Marker> {
   
   /**
    * Creates a marker with the options specified. If a map is specified, the marker is added to the map upon construction. Note that the position must be set for the marker to display.
@@ -366,6 +367,14 @@ public class Marker extends JavaScriptObject {
    */
   public final native void setZindex(int number) /*-{
     this.setZIndex(number);
+  }-*/;
+  
+  /**
+   * The maximum default z-index that the API will assign to a marker. You may set a higher z-index to bring a marker to the front.
+   * @return
+   */
+  public final native int getMax_Zindex() /*-{
+    return $wnd.google.maps.Marker.MAX_ZINDEX;
   }-*/;
   
   /**

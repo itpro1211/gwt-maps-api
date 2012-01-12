@@ -296,5 +296,6 @@ public class MarkerOptionsTest extends GWTTestCase {
     }, false);
     delayTestFinish(ASYNC_DELAY_MS);
   }
+ 
 }
 
