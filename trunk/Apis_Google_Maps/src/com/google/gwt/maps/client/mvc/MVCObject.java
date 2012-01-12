@@ -17,11 +17,13 @@ public class MVCObject<T extends JavaScriptObject> extends JavaScriptObject {
   protected MVCObject() {}
   
   /**
-   * create instance of MVCObject
+   * (Main purpose is for internal use only)
+   * 
+   * create instance of MVCObject (inherited class)
    * @param t - what type is being init
    * @return
    */
-  public final static <T extends JavaScriptObject> MVCObject<T> newInstanceOfMVCObject() {
+  public final static <T extends JavaScriptObject> MVCObject<T> createInstanceOfMVCObject() {
     return createJsoMvcObject().cast();
   }
 

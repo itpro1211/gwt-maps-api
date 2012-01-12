@@ -18,12 +18,13 @@ import com.google.gwt.maps.client.events.overlaycomplete.polyline.PolylineComple
 import com.google.gwt.maps.client.events.overlaycomplete.polyline.PolylineCompleteMapHandler;
 import com.google.gwt.maps.client.events.overlaycomplete.rectangle.RectangleCompleteEventFormatter;
 import com.google.gwt.maps.client.events.overlaycomplete.rectangle.RectangleCompleteMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  *  Allows users to draw markers, polygons, polylines, rectangles, and circles on the map. The DrawingManager's drawing mode defines the type of overlay that will be created by the user. Adds a control to the map, allowing the user to switch drawing mode. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#DrawingManager}
  */
-public class DrawingManager extends JavaScriptObject {
+public class DrawingManager extends MVCObject<DrawingManager> {
   
   /**
    * use newInstance();

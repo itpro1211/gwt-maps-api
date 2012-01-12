@@ -25,12 +25,13 @@ import com.google.gwt.maps.client.events.mouseup.MouseUpMapHandler;
 import com.google.gwt.maps.client.events.rightclick.RightClickEventFormatter;
 import com.google.gwt.maps.client.events.rightclick.RightClickMapHandler;
 import com.google.gwt.maps.client.mvc.MVCArray;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * 
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#Polygon} 
  */
-public class Polygon extends JavaScriptObject {
+public class Polygon extends MVCObject<Polygon> {
   
   /**
    * use newInstance();

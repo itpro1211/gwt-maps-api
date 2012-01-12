@@ -282,6 +282,17 @@ public class MarkerTest extends GWTTestCase {
     delayTestFinish(ASYNC_DELAY_MS);
   }
   
-  
+  public void testMaxZindex() {
+    LoadApi.go(new Runnable() {
+      public void run() {
+        MarkerOptions options = MarkerOptions.newInstance();
+        Marker o = Marker.newInstance(options);
+        int right = o.getMax_Zindex();
+        assertEquals(1000000, right);
+        finishTest();
+      }
+    }, false);
+    delayTestFinish(ASYNC_DELAY_MS);
+  }
   
 }

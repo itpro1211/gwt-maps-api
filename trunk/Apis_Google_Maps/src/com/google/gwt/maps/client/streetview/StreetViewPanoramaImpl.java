@@ -22,12 +22,13 @@ import com.google.gwt.maps.client.events.resize.ResizeMapHandler;
 import com.google.gwt.maps.client.events.visible.VisibleChangeEventFormatter;
 import com.google.gwt.maps.client.events.visible.VisibleChangeMapHandler;
 import com.google.gwt.maps.client.mvc.MVCArray;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * Displays the panorama for a given LatLng or panorama ID. A StreetViewPanorama object provides a Street View "viewer" which can be stand-alone within a separate <div> or bound to a Map. This class extends MVCObject.
  * {@linkhttp://code.google.com/apis/maps/documentation/javascript/reference.html#StreetViewPanorama} 
  */
-public class StreetViewPanoramaImpl extends JavaScriptObject {
+public class StreetViewPanoramaImpl extends MVCObject<StreetViewPanoramaImpl> {
   
   /**
    * Displays the panorama for a given LatLng or panorama ID. A StreetViewPanorama object provides a Street View "viewer" which can be stand-alone within a separate <div> or bound to a Map. This class extends MVCObject.

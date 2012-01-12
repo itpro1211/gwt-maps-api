@@ -28,12 +28,13 @@ import com.google.gwt.maps.client.events.radius.RadiusChangeEventFormatter;
 import com.google.gwt.maps.client.events.radius.RadiusChangeMapHandler;
 import com.google.gwt.maps.client.events.rightclick.RightClickEventFormatter;
 import com.google.gwt.maps.client.events.rightclick.RightClickMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * A circle overlay. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#Circle}
  */
-public class Circle extends JavaScriptObject {
+public class Circle extends MVCObject<Circle> {
 
   /**
    * use newInstance();

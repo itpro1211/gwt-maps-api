@@ -16,6 +16,7 @@ import com.google.gwt.maps.client.events.mapchange.MapChangeEventFormatter;
 import com.google.gwt.maps.client.events.mapchange.MapChangeMapHandler;
 import com.google.gwt.maps.client.events.position.PositionChangeEventFormatter;
 import com.google.gwt.maps.client.events.position.PositionChangeMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * Implements AdSense for Content advertising on an associated map. To use an
@@ -24,7 +25,7 @@ import com.google.gwt.maps.client.events.position.PositionChangeMapHandler;
  * {@link http
  * ://code.google.com/apis/maps/documentation/javascript/reference.html#AdUnit}
  */
-public class AdUnitImpl extends JavaScriptObject {
+public class AdUnitImpl extends MVCObject<AdUnitImpl> {
 
   private final static native JavaScriptObject createJso(Element container, AdUnitOptions options) /*-{
 		return new $wnd.google.maps.adsense.AdUnit(container, options);

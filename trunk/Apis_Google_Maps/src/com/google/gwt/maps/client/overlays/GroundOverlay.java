@@ -9,12 +9,13 @@ import com.google.gwt.maps.client.events.MapEventType;
 import com.google.gwt.maps.client.events.MapHandlerRegistration;
 import com.google.gwt.maps.client.events.click.ClickEventFormatter;
 import com.google.gwt.maps.client.events.click.ClickMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * A groundoverlay overlay. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#GroundOverlay}
  */
-public class GroundOverlay extends JavaScriptObject {
+public class GroundOverlay extends MVCObject<GroundOverlay> {
 
   /**
    * use newInstance();

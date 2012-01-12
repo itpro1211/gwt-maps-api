@@ -8,12 +8,13 @@ import com.google.gwt.maps.client.events.MapEventType;
 import com.google.gwt.maps.client.events.MapHandlerRegistration;
 import com.google.gwt.maps.client.events.panoramiomouse.PanoramioMouseEventFormatter;
 import com.google.gwt.maps.client.events.panoramiomouse.PanoramioMouseMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObject;
 
 /**
  * A PanoramioLayer displays photos from Panoramio as a rendered layer. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#PanoramioLayer}
  */
-public class PanoramioLayer extends JavaScriptObject {
+public class PanoramioLayer extends MVCObject<PanoramioLayer> {
 
   /**
    * use newInstance();

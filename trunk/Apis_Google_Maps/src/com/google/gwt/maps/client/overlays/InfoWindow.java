@@ -26,7 +26,7 @@ import com.google.gwt.maps.client.streetview.StreetViewPanoramaWidget;
  * An overlay that looks like a bubble and is often connected to a marker. This class extends MVCObject.
  * {@link }
  */
-public class InfoWindow extends JavaScriptObject {
+public class InfoWindow extends MVCObject<InfoWindow> {
 
   /**
    * use newInstance();
@@ -91,7 +91,7 @@ public class InfoWindow extends JavaScriptObject {
    * @param mapWidget
    */
   public final void open(MapWidget mapWidget) {
-    open(mapWidget.getJso());
+    open(mapWidget.getJso(), null);
   }
   
   /**
@@ -100,10 +100,6 @@ public class InfoWindow extends JavaScriptObject {
    * @param anchor
    */
   public final void open(MapWidget mapWidget, MVCObject<?> anchor) {
-    open(mapWidget.getJso(), anchor);
-  }
-  
-  public final <T> void open(MapWidget mapWidget, Marker anchor) {
     open(mapWidget.getJso(), anchor);
   }
 

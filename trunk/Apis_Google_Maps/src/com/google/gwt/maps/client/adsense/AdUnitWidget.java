@@ -8,6 +8,7 @@ import com.google.gwt.maps.client.events.channelnumber.ChannelNumberChangeMapHan
 import com.google.gwt.maps.client.events.format.FormatChangeMapHandler;
 import com.google.gwt.maps.client.events.mapchange.MapChangeMapHandler;
 import com.google.gwt.maps.client.events.position.PositionChangeMapHandler;
+import com.google.gwt.maps.client.mvc.MVCObjectWidget;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -17,7 +18,7 @@ import com.google.gwt.user.client.ui.Widget;
  * within the AdUnit's constructor options. This class extends MVCObject.
  * {@link http://code.google.com/apis/maps/documentation/javascript/reference.html#AdUnit}
  */
-public class AdUnitWidget extends Widget {
+public class AdUnitWidget extends MVCObjectWidget<AdUnitImpl> {
 
   /**
    * jso
