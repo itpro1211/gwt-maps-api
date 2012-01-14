@@ -63,7 +63,11 @@ public class KmlLayer extends JavaScriptObject {
    * @param mapWidget
    */
   public final void setMap(MapWidget mapWidget) {
-    setMapImpl(mapWidget.getJso());
+    if (mapWidget == null) {
+      close();
+    } else {
+      setMapImpl(mapWidget.getJso());
+    }
   }
 
   private final native void setMapImpl(MapImpl map) /*-{
@@ -116,4 +120,10 @@ public class KmlLayer extends JavaScriptObject {
     return MapHandlerRegistration.addHandler(this, MapEventType.DEFAULTVIEWPORT_CHANGED, handler, new DefaultViewportChangeEventFormatter());
   }
   
+  /**
+   * erase kml layer
+   */
+  public final native void close() /*-{
+    this.setMap();
+  }-*/;
 }
