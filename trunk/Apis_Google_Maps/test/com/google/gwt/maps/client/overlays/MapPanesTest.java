@@ -3,7 +3,6 @@ package com.google.gwt.maps.client.overlays;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
-import com.google.gwt.maps.client.overlays.MapPanes;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 

@@ -4,8 +4,6 @@ import com.google.gwt.ajaxloader.client.ArrayHelper;
 import com.google.gwt.core.client.JsArrayInteger;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
-import com.google.gwt.maps.client.overlays.MarkerShape;
-import com.google.gwt.maps.client.overlays.MarkerShapeType;
 
 public class MarkerShapeTest extends GWTTestCase {
 

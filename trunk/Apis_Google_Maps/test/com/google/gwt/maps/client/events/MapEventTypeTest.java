@@ -1,7 +1,6 @@
 package com.google.gwt.maps.client.events;
 
 import com.google.gwt.junit.client.GWTTestCase;
-import com.google.gwt.maps.client.events.MapEventType;
 
 public class MapEventTypeTest extends GWTTestCase {
 

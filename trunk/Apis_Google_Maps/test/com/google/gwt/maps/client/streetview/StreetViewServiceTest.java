@@ -6,10 +6,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaOptions;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaWidget;
-import com.google.gwt.maps.client.streetview.StreetViewPov;
-import com.google.gwt.maps.client.streetview.StreetViewService;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.RootPanel;
 

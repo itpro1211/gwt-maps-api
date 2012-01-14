@@ -2,10 +2,6 @@ package com.google.gwt.maps.client.layers;
 
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
-import com.google.gwt.maps.client.layers.FusionTablesMarkerOptions;
-import com.google.gwt.maps.client.layers.FusionTablesPolygonOptions;
-import com.google.gwt.maps.client.layers.FusionTablesPolylineOptions;
-import com.google.gwt.maps.client.layers.FusionTablesStyle;
 
 public class FusionTablesStyleTest extends GWTTestCase {
 

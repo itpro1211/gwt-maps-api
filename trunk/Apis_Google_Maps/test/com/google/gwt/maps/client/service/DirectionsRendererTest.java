@@ -1,25 +1,26 @@
 package com.google.gwt.maps.client.service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
+import com.google.gwt.ajaxloader.client.ArrayHelper;
 import com.google.gwt.core.client.JsArray;
-import com.google.gwt.core.client.JsArrayString;
+import com.google.gwt.dom.client.Element;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
-import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.base.LatLngBounds;
+import com.google.gwt.maps.client.MapOptions;
+import com.google.gwt.maps.client.MapWidget;
+import com.google.gwt.maps.client.overlays.InfoWindow;
+import com.google.gwt.maps.client.overlays.InfoWindowOptions;
+import com.google.gwt.maps.client.overlays.MarkerOptions;
+import com.google.gwt.maps.client.overlays.PolylineOptions;
+import com.google.gwt.maps.client.services.DirectionsRenderer;
 import com.google.gwt.maps.client.services.DirectionsRendererOptions;
-import com.google.gwt.maps.client.services.Geocoder;
-import com.google.gwt.maps.client.services.GeocoderAddressComponent;
-import com.google.gwt.maps.client.services.GeocoderGeometry;
-import com.google.gwt.maps.client.services.GeocoderLocationType;
-import com.google.gwt.maps.client.services.GeocoderRequest;
-import com.google.gwt.maps.client.services.GeocoderRequestHandler;
-import com.google.gwt.maps.client.services.GeocoderResult;
-import com.google.gwt.maps.client.services.GeocoderStatus;
-import com.google.gwt.maps.client.streetview.StreetViewStatus;
+import com.google.gwt.maps.client.services.DirectionsResult;
+import com.google.gwt.maps.client.services.DirectionsRoute;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.RootPanel;
 
 public class DirectionsRendererTest extends GWTTestCase {
 
@@ -39,28 +40,84 @@ public class DirectionsRendererTest extends GWTTestCase {
     loadLibraries.add(LoadLibrary.PLACES);   
     LoadApi.go(new Runnable() {
       public void run() {
-        DirectionsRendererOptions o = DirectionsRendererOptions.newInstance();
+        DirectionsRendererOptions options = DirectionsRendererOptions.newInstance();
+        DirectionsRenderer o = DirectionsRenderer.newInstance(options);
         finishTest();
       }
     }, loadLibraries , sensor);
   }
 
-//  public void testDirections() {
-//    boolean sensor = false;
-//    ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
-//    loadLibraries.add(LoadLibrary.PLACES);   
-//    LoadApi.go(new Runnable() {
-//      public void run() {
-//        DirectionsRendererOptions o = DirectionsRendererOptions.newInstance();
-//        DirectionsResult left = DirectionsResult.newInstance();
-//        a
-//        o.setDirections(left);
-//        DirectionsResult right = o.getDirections();
-//        
-//        finishTest();
-//      }
-//    }, loadLibraries , sensor);
-//  }
-//  
+  public void testDirections() {
+    boolean sensor = false;
+    ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
+    loadLibraries.add(LoadLibrary.PLACES);   
+    LoadApi.go(new Runnable() {
+      public void run() {
+        DirectionsRendererOptions options = DirectionsRendererOptions.newInstance();
+        DirectionsRenderer o = DirectionsRenderer.newInstance(options);
+        DirectionsResult left = DirectionsResult.newInstance();
+        o.setDirections(left);
+        DirectionsResult right = o.getDirections();
+        assertEquals(left.getRoutes().length(), right.getRoutes().length());
+        finishTest();
+      }
+    }, loadLibraries , sensor);
+  }
+  
+  public void testMap() {
+    boolean sensor = false;
+    ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
+    loadLibraries.add(LoadLibrary.PLACES);   
+    LoadApi.go(new Runnable() {
+      public void run() {
+        DirectionsRendererOptions options = DirectionsRendererOptions.newInstance();
+        DirectionsRenderer o = DirectionsRenderer.newInstance(options);
+        MapOptions opts = MapOptions.newInstance();
+        MapWidget left = new MapWidget(opts);
+        RootPanel.get().add(left);
+        o.setMap(left);
+        MapWidget right = o.getMap();
+        assertEquals(left.getCenter().getToString(), right.getCenter().getToString());
+        finishTest();
+      }
+    }, loadLibraries , sensor);
+  }
+  
+  public void testPanel() {
+    boolean sensor = false;
+    ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
+    loadLibraries.add(LoadLibrary.PLACES);   
+    LoadApi.go(new Runnable() {
+      public void run() {
+        DirectionsRendererOptions options = DirectionsRendererOptions.newInstance();
+        DirectionsRenderer o = DirectionsRenderer.newInstance(options);
+        FlowPanel fp = new FlowPanel();
+        Element left = fp.getElement();
+        o.setPanel(left);
+        Element right = o.getPanel();
+        assertEquals(left.toString(), right.toString());
+        finishTest();
+      }
+    }, loadLibraries , sensor);
+  }
+  
+  public void testRouteIndex() {
+    boolean sensor = false;
+    ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
+    loadLibraries.add(LoadLibrary.PLACES);   
+    LoadApi.go(new Runnable() {
+      public void run() {
+        DirectionsRendererOptions options = DirectionsRendererOptions.newInstance();
+        DirectionsRenderer o = DirectionsRenderer.newInstance(options);
+        int left = 5;
+        o.setRouteIndex(left);
+        int right = o.getRouteIndex();
+        assertEquals(left, right);
+        finishTest();
+      }
+    }, loadLibraries , sensor);
+  }
+  
+  
   
 }

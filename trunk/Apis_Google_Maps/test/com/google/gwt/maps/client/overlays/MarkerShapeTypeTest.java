@@ -1,7 +1,6 @@
 package com.google.gwt.maps.client.overlays;
 
 import com.google.gwt.junit.client.GWTTestCase;
-import com.google.gwt.maps.client.overlays.MarkerShapeType;
 
 public class MarkerShapeTypeTest extends GWTTestCase {
 

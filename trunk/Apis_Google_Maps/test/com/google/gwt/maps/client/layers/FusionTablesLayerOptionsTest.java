@@ -6,11 +6,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapWidget;
-import com.google.gwt.maps.client.layers.FusionTableHeatmap;
-import com.google.gwt.maps.client.layers.FusionTablesLayer;
-import com.google.gwt.maps.client.layers.FusionTablesLayerOptions;
-import com.google.gwt.maps.client.layers.FusionTablesQuery;
-import com.google.gwt.maps.client.layers.FusionTablesStyle;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class FusionTablesLayerOptionsTest extends GWTTestCase {

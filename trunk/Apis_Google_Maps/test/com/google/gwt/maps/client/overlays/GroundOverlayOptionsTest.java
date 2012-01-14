@@ -4,7 +4,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapWidget;
-import com.google.gwt.maps.client.overlays.GroundOverlayOptions;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class GroundOverlayOptionsTest extends GWTTestCase {

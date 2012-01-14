@@ -5,15 +5,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.Size;
-import com.google.gwt.maps.client.streetview.StreetViewLink;
-import com.google.gwt.maps.client.streetview.StreetViewLocation;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaData;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaOptions;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaProvider;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaWidget;
-import com.google.gwt.maps.client.streetview.StreetViewPov;
-import com.google.gwt.maps.client.streetview.StreetViewTileData;
-import com.google.gwt.maps.client.streetview.TileUrlHandler;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class StreetViewPanoramaWidgetTest extends GWTTestCase {

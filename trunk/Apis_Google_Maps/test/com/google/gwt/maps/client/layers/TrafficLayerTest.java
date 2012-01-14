@@ -6,7 +6,6 @@ import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapTypeId;
 import com.google.gwt.maps.client.MapWidget;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.layers.TrafficLayer;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**

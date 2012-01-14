@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
-import com.google.gwt.maps.client.adsense.AdFormat;
-import com.google.gwt.maps.client.adsense.AdUnitOptions;
 import com.google.gwt.maps.client.controls.ControlPosition;
 
 public class AdUnitOptionsTest extends GWTTestCase {

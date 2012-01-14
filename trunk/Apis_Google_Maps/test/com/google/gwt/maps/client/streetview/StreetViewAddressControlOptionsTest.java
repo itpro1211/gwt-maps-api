@@ -3,7 +3,6 @@ package com.google.gwt.maps.client.streetview;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.controls.ControlPosition;
-import com.google.gwt.maps.client.streetview.StreetViewAddressControlOptions;
 
 public class StreetViewAddressControlOptionsTest extends GWTTestCase {
 

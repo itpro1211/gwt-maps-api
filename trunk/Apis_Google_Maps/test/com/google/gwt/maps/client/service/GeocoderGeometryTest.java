@@ -9,8 +9,6 @@ import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
 import com.google.gwt.maps.client.services.GeocoderGeometry;
 import com.google.gwt.maps.client.services.GeocoderLocationType;
-import com.google.gwt.maps.client.services.GeocoderStatus;
-import com.google.gwt.maps.client.streetview.StreetViewStatus;
 
 public class GeocoderGeometryTest extends GWTTestCase {
 

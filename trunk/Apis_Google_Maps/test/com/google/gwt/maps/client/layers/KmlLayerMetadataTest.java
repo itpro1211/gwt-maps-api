@@ -2,8 +2,6 @@ package com.google.gwt.maps.client.layers;
 
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
-import com.google.gwt.maps.client.layers.KmlAuthor;
-import com.google.gwt.maps.client.layers.KmlLayerMetadata;
 
 public class KmlLayerMetadataTest extends GWTTestCase {
 

@@ -5,12 +5,6 @@ import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapWidget;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.overlays.Animation;
-import com.google.gwt.maps.client.overlays.Marker;
-import com.google.gwt.maps.client.overlays.MarkerImage;
-import com.google.gwt.maps.client.overlays.MarkerOptions;
-import com.google.gwt.maps.client.overlays.MarkerShape;
-import com.google.gwt.maps.client.overlays.MarkerShapeType;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaOptions;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaWidget;
 

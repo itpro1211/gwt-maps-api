@@ -8,9 +8,6 @@ import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
 import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapWidget;
-import com.google.gwt.maps.client.adsense.AdFormat;
-import com.google.gwt.maps.client.adsense.AdUnitOptions;
-import com.google.gwt.maps.client.adsense.AdUnitWidget;
 import com.google.gwt.maps.client.controls.ControlPosition;
 import com.google.gwt.user.client.ui.RootPanel;
 

@@ -8,7 +8,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.geometrylib.EncodingUtils;
 import com.google.gwt.maps.client.mvc.MVCArray;
 
 public class EncodingUtilsTest extends GWTTestCase {

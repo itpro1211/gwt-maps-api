@@ -3,8 +3,6 @@ package com.google.gwt.maps.client.controls;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.MapTypeId;
-import com.google.gwt.maps.client.controls.ControlPosition;
-import com.google.gwt.maps.client.controls.MapTypeControlOptions;
 
 public class MapTypeControlOptionsTest extends GWTTestCase {
 

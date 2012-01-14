@@ -4,10 +4,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.controls.ControlPosition;
 import com.google.gwt.maps.client.controls.PanControlOptions;
-import com.google.gwt.maps.client.streetview.StreetViewAddressControlOptions;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaData;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaOptions;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaProvider;
 
 public class StreetViewPanaoramaOptionsTest extends GWTTestCase {
 

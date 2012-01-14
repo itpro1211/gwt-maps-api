@@ -87,6 +87,9 @@ import com.google.gwt.maps.client.placelib.PlaceGeomtryTest;
 import com.google.gwt.maps.client.placelib.PlaceResultTest;
 import com.google.gwt.maps.client.placelib.PlaceServiceStatusTest;
 import com.google.gwt.maps.client.placelib.PlacesServiceTest;
+import com.google.gwt.maps.client.service.DirectionsRendererTest;
+import com.google.gwt.maps.client.service.DirectionsResultTest;
+import com.google.gwt.maps.client.service.DirectionsRouteTest;
 import com.google.gwt.maps.client.service.DirectionsStepTest;
 import com.google.gwt.maps.client.service.DistanceTest;
 import com.google.gwt.maps.client.service.DurationTest;
@@ -235,6 +238,9 @@ public class MapsTestSuite extends GWTTestSuite {
     suite.addTestSuite(DurationTest.class);
     suite.addTestSuite(TravelModeTest.class);
     suite.addTestSuite(DirectionsStepTest.class);
+    suite.addTestSuite(DirectionsRouteTest.class);
+    suite.addTestSuite(DirectionsResultTest.class);
+    suite.addTestSuite(DirectionsRendererTest.class);
     
     return suite;
   }

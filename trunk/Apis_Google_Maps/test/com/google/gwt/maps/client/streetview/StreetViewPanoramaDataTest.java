@@ -4,10 +4,6 @@ import com.google.gwt.ajaxloader.client.ArrayHelper;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
-import com.google.gwt.maps.client.streetview.StreetViewLink;
-import com.google.gwt.maps.client.streetview.StreetViewLocation;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaData;
-import com.google.gwt.maps.client.streetview.StreetViewTileData;
 
 public class StreetViewPanoramaDataTest extends GWTTestCase {
 

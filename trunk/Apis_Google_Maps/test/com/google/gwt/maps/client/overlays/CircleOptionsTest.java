@@ -5,7 +5,6 @@ import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapWidget;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.overlays.CircleOptions;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class CircleOptionsTest extends GWTTestCase {

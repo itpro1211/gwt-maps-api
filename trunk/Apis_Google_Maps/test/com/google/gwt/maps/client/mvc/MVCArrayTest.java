@@ -11,8 +11,6 @@ import com.google.gwt.maps.client.events.removeat.RemoveAtMapEvent;
 import com.google.gwt.maps.client.events.removeat.RemoveAtMapHandler;
 import com.google.gwt.maps.client.events.setat.SetAtMapEvent;
 import com.google.gwt.maps.client.events.setat.SetAtMapHandler;
-import com.google.gwt.maps.client.mvc.MVCArray;
-import com.google.gwt.maps.client.mvc.MVCArrayCallback;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 
