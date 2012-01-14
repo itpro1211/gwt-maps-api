@@ -2,7 +2,6 @@ package com.google.gwt.maps.client.controls;
 
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
-import com.google.gwt.maps.client.controls.OverviewMapControlOptions;
 
 public class OverviewMapControlOptionsTest extends GWTTestCase {
 

@@ -2,8 +2,6 @@ package com.google.gwt.maps.client.controls;
 
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
-import com.google.gwt.maps.client.controls.ControlPosition;
-import com.google.gwt.maps.client.controls.PanControlOptions;
 
 public class PanControlOptionsTest extends GWTTestCase {
 

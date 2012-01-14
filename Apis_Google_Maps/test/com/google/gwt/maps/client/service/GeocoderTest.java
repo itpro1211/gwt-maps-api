@@ -18,7 +18,6 @@ import com.google.gwt.maps.client.services.GeocoderRequest;
 import com.google.gwt.maps.client.services.GeocoderRequestHandler;
 import com.google.gwt.maps.client.services.GeocoderResult;
 import com.google.gwt.maps.client.services.GeocoderStatus;
-import com.google.gwt.maps.client.streetview.StreetViewStatus;
 
 public class GeocoderTest extends GWTTestCase {
 

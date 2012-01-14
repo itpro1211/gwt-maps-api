@@ -12,8 +12,6 @@ import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.services.GeocoderAddressComponent;
 import com.google.gwt.maps.client.services.GeocoderGeometry;
 import com.google.gwt.maps.client.services.GeocoderResult;
-import com.google.gwt.maps.client.services.GeocoderStatus;
-import com.google.gwt.maps.client.streetview.StreetViewStatus;
 
 public class GeocoderResultTest extends GWTTestCase {
 

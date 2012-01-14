@@ -10,7 +10,6 @@ import com.google.gwt.maps.client.events.mapchange.MapChangeMapHandler;
 import com.google.gwt.maps.client.events.position.PositionChangeMapHandler;
 import com.google.gwt.maps.client.mvc.MVCObjectWidget;
 import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Implements AdSense for Content advertising on an associated map. To use an

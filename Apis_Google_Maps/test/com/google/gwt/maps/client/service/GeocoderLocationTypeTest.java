@@ -6,8 +6,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
 import com.google.gwt.maps.client.services.GeocoderLocationType;
-import com.google.gwt.maps.client.services.GeocoderStatus;
-import com.google.gwt.maps.client.streetview.StreetViewStatus;
 
 public class GeocoderLocationTypeTest extends GWTTestCase {
 

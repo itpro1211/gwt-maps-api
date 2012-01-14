@@ -3,9 +3,6 @@ package com.google.gwt.maps.client.streetview;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
-import com.google.gwt.maps.client.streetview.StreetViewPanoramaOptions;
-import com.google.gwt.maps.client.streetview.StreetViewPov;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 

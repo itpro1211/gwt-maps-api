@@ -1,25 +1,11 @@
 package com.google.gwt.maps.client.service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
-import com.google.gwt.core.client.JsArray;
-import com.google.gwt.core.client.JsArrayString;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
-import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.base.LatLngBounds;
 import com.google.gwt.maps.client.services.Distance;
-import com.google.gwt.maps.client.services.Geocoder;
-import com.google.gwt.maps.client.services.GeocoderAddressComponent;
-import com.google.gwt.maps.client.services.GeocoderGeometry;
-import com.google.gwt.maps.client.services.GeocoderLocationType;
-import com.google.gwt.maps.client.services.GeocoderRequest;
-import com.google.gwt.maps.client.services.GeocoderRequestHandler;
-import com.google.gwt.maps.client.services.GeocoderResult;
-import com.google.gwt.maps.client.services.GeocoderStatus;
-import com.google.gwt.maps.client.streetview.StreetViewStatus;
 
 public class DistanceTest extends GWTTestCase {
 

@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.streetview.StreetViewLocation;
 
 public class StreetViewLocationTest extends GWTTestCase {
 

@@ -8,7 +8,6 @@ import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapWidget;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
-import com.google.gwt.maps.client.overlays.RectangleOptions;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class RectangleOptionsTest extends GWTTestCase {

@@ -5,7 +5,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.Size;
-import com.google.gwt.maps.client.overlays.InfoWindowOptions;
 import com.google.gwt.user.client.ui.FlowPanel;
 
 public class InfoWindowOptionsTest extends GWTTestCase {

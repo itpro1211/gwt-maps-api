@@ -86,7 +86,7 @@ public class DirectionsRendererOptions extends JavaScriptObject {
   /**
    * The InfoWindow in which to render text information when a marker is clicked. Existing info window content will be overwritten and its position moved. If no info window is specified, the DirectionsRenderer will create and use its own info window. This property will be ignored if suppressInfoWindows is set to true.
    */
-  public final native void getInfoWindow() /*-{
+  public final native InfoWindow getInfoWindow() /*-{
     return this.infoWindow;
   }-*/;
   
@@ -254,7 +254,7 @@ public class DirectionsRendererOptions extends JavaScriptObject {
    * Suppress the rendering of polylines.
    * @return
    */
-  public final native boolean getSuppressPolyline() /*-{
+  public final native boolean getSuppressPolylines() /*-{
     return this.suppressPolylines;
   }-*/;
     

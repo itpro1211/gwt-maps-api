@@ -32,6 +32,8 @@ public enum MapEventType {
 
   DEFAULTVIEWPORT_CHANGED,
   
+  DIRECTIONS_CHANGED,
+  
   DOMREADY,
   
   DRAG,
