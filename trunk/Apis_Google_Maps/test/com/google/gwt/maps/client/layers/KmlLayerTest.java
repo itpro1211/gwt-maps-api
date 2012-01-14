@@ -7,6 +7,8 @@ import com.google.gwt.maps.client.MapTypeId;
 import com.google.gwt.maps.client.MapWidget;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
+import com.google.gwt.maps.client.overlays.Marker;
+import com.google.gwt.maps.client.overlays.MarkerOptions;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**
@@ -153,6 +155,40 @@ public class KmlLayerTest extends GWTTestCase {
         String right = o.getUrl();
         assertEquals(url, right);
         
+        finishTest();
+      }
+    }, false);
+    delayTestFinish(ASYNC_DELAY_MS);
+  }
+  
+  public void testClose() {
+    LoadApi.go(new Runnable() {
+      public void run() {
+        String url = "http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss";
+        KmlLayerOptions options = KmlLayerOptions.newInstance();
+        KmlLayer o = KmlLayer.newInstance(url, options);
+        
+        MapOptions mapOptions = MapOptions.newInstance();
+        MapWidget left = new MapWidget(mapOptions);
+        o.setMap(left);
+        o.close();
+        finishTest();
+      }
+    }, false);
+    delayTestFinish(ASYNC_DELAY_MS);
+  }
+  
+  
+  public void testClose2() {
+    LoadApi.go(new Runnable() {
+      public void run() {
+        String url = "http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss";
+        KmlLayerOptions options = KmlLayerOptions.newInstance();
+        KmlLayer o = KmlLayer.newInstance(url, options);
+        MapOptions mapOptions = MapOptions.newInstance();
+        MapWidget left = new MapWidget(mapOptions);
+        o.setMap(left);
+        o.setMap((MapWidget)null);
         finishTest();
       }
     }, false);
