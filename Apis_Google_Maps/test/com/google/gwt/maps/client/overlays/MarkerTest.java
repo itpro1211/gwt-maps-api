@@ -289,4 +289,37 @@ public class MarkerTest extends GWTTestCase {
     delayTestFinish(ASYNC_DELAY_MS);
   }
   
+  public void testClose() {
+    LoadApi.go(new Runnable() {
+      public void run() {
+        MarkerOptions options = MarkerOptions.newInstance();
+        Marker o = Marker.newInstance(options);
+        MapOptions mapOptions = MapOptions.newInstance();
+        MapWidget left = new MapWidget(mapOptions);
+        o.setMap(left);
+        MapWidget right = o.getMap();
+        o.close();
+        finishTest();
+      }
+    }, false);
+    delayTestFinish(ASYNC_DELAY_MS);
+  }
+  
+  
+  public void testClose2() {
+    LoadApi.go(new Runnable() {
+      public void run() {
+        MarkerOptions options = MarkerOptions.newInstance();
+        Marker o = Marker.newInstance(options);
+        MapOptions mapOptions = MapOptions.newInstance();
+        MapWidget left = new MapWidget(mapOptions);
+        o.setMap(left);
+        MapWidget right = o.getMap();
+        o.setMap((MapWidget)null);
+        finishTest();
+      }
+    }, false);
+    delayTestFinish(ASYNC_DELAY_MS);
+  }
+  
 }
