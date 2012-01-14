@@ -88,9 +88,12 @@ import com.google.gwt.maps.client.placelib.PlaceResultTest;
 import com.google.gwt.maps.client.placelib.PlaceServiceStatusTest;
 import com.google.gwt.maps.client.placelib.PlacesServiceTest;
 import com.google.gwt.maps.client.service.DirectionsRendererTest;
+import com.google.gwt.maps.client.service.DirectionsRequestTest;
 import com.google.gwt.maps.client.service.DirectionsResultTest;
 import com.google.gwt.maps.client.service.DirectionsRouteTest;
+import com.google.gwt.maps.client.service.DirectionsStatusTest;
 import com.google.gwt.maps.client.service.DirectionsStepTest;
+import com.google.gwt.maps.client.service.DirectionsWaypointTest;
 import com.google.gwt.maps.client.service.DistanceTest;
 import com.google.gwt.maps.client.service.DurationTest;
 import com.google.gwt.maps.client.service.GeocoderAddressComponentTest;
@@ -101,6 +104,7 @@ import com.google.gwt.maps.client.service.GeocoderResultTest;
 import com.google.gwt.maps.client.service.GeocoderStatusTest;
 import com.google.gwt.maps.client.service.GeocoderTest;
 import com.google.gwt.maps.client.service.TravelModeTest;
+import com.google.gwt.maps.client.service.UnitSystemTest;
 import com.google.gwt.maps.client.streetview.StreetViewAddressControlOptionsTest;
 import com.google.gwt.maps.client.streetview.StreetViewControlOptionsTest;
 import com.google.gwt.maps.client.streetview.StreetViewLinkTest;
@@ -241,6 +245,11 @@ public class MapsTestSuite extends GWTTestSuite {
     suite.addTestSuite(DirectionsRouteTest.class);
     suite.addTestSuite(DirectionsResultTest.class);
     suite.addTestSuite(DirectionsRendererTest.class);
+    suite.addTestSuite(DirectionsStatusTest.class);
+    suite.addTestSuite(UnitSystemTest.class);
+    suite.addTestSuite(DirectionsWaypointTest.class);
+    suite.addTestSuite(DirectionsRequestTest.class);
+    
     
     return suite;
   }
