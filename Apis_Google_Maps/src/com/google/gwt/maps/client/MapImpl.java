@@ -5,6 +5,7 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
+import com.google.gwt.maps.client.controls.ControlPosition;
 import com.google.gwt.maps.client.events.MapEventType;
 import com.google.gwt.maps.client.events.MapHandlerRegistration;
 import com.google.gwt.maps.client.events.bounds.BoundsChangeEventFormatter;
@@ -261,6 +262,19 @@ public class MapImpl extends MVCObject<MapImpl> {
   }-*/;
   
   /**
+   * sets Additional controls to attach to the map. To add a control to the map, add the control's <div> to the MVCArray corresponding to the ControlPosition where it should be rendered.
+   * @param controlPosition
+   * @param element
+   */
+  public final void setControls(ControlPosition controlPosition, Element element) {
+    setControls(controlPosition.value(), element);
+  }
+  
+  private final native void setControls(int controlPosition, Element element) /*-{
+    this.controls[controlPosition].push(element);
+  }-*/;
+  
+  /**
    * TODO
    * gets Additional controls to attach to the map. To add a control to the map, add the control's <div> to the MVCArray corresponding to the ControlPosition where it should be rendered.
    * @return
@@ -475,4 +489,5 @@ public class MapImpl extends MVCObject<MapImpl> {
   public final HandlerRegistration addZoomChangeHandler(ZoomChangeMapHandler handler) {
     return MapHandlerRegistration.addHandler(this, MapEventType.ZOOM_CHANGED, handler, new ZoomChangeEventFormatter());
   }
+
 }
