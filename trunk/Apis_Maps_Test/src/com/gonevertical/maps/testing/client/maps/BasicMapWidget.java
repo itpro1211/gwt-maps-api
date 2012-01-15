@@ -94,7 +94,7 @@ public class BasicMapWidget extends Composite {
     HTML html = new HTML("You clicked on: " + mouseEvent.getLatLng().getToString());
     
     InfoWindowOptions options = InfoWindowOptions.newInstance();
-    options.setContentWidget(html);
+    options.setContent(html);
     InfoWindow iw = InfoWindow.newInstance(options);
     iw.open(mapWidget, marker);
   }
