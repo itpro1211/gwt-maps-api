@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.gonevertical.maps.testing.client.maps.AutocompletePlacesMapWidget;
 import com.gonevertical.maps.testing.client.maps.BasicMapWidget;
 import com.gonevertical.maps.testing.client.maps.ControlsMapWidget;
+import com.gonevertical.maps.testing.client.maps.CustomControlsMapWidget;
 import com.gonevertical.maps.testing.client.maps.DrawingMapWidget;
 import com.gonevertical.maps.testing.client.maps.FusionTablesMapWidget;
 import com.gonevertical.maps.testing.client.maps.InfoWindowMapWidget;
@@ -71,30 +72,37 @@ public class Apis_Maps_Test implements EntryPoint {
     HTML html = new HTML("<a href=\"Apis_Maps_Test_FullPage.html\">See 100% Map Demo</a><br/><br/>");
     RootPanel.get().add(html);
 
-    drawInfoWindowMap();
+    drawCustomControlsMap();
     
-    drawStreetViewSideBySide();
-    
-    drawStreetViewCustom();
-    
-    drawStreetView();
-    
-    drawAutocomplete();
-    
-    drawDrawingMap();
-    
-    drawBasicMap();
-    
-    drawFusionMap();
-    
-    drawKmlMap();
-    
-    drawMapWcontrols();
-    
-    drawPanoramioMap();
+//    drawInfoWindowMap();
+//    
+//    drawStreetViewSideBySide();
+//    
+//    drawStreetViewCustom();
+//    
+//    drawStreetView();
+//    
+//    drawAutocomplete();
+//    
+//    drawDrawingMap();
+//    
+//    drawBasicMap();
+//    
+//    drawFusionMap();
+//    
+//    drawKmlMap();
+//    
+//    drawMapWcontrols();
+//    
+//    drawPanoramioMap();
     
   }
   
+  private void drawCustomControlsMap() {
+    CustomControlsMapWidget wMap = new CustomControlsMapWidget();
+    RootPanel.get().add(wMap);
+  }
+
   private void drawInfoWindowMap() {
     InfoWindowMapWidget wMap = new InfoWindowMapWidget();
     RootPanel.get().add(wMap);
