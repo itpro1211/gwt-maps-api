@@ -5,6 +5,7 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
+import com.google.gwt.maps.client.controls.ControlPosition;
 import com.google.gwt.maps.client.events.MapHandlerRegistration;
 import com.google.gwt.maps.client.events.bounds.BoundsChangeMapHandler;
 import com.google.gwt.maps.client.events.center.CenterChangeMapHandler;
@@ -31,6 +32,7 @@ import com.google.gwt.maps.client.mvc.MVCArray;
 import com.google.gwt.maps.client.mvc.MVCObjectWidget;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
 import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.ui.Widget;
 
 public class MapWidget extends MVCObjectWidget<MapImpl> {
 
@@ -254,6 +256,24 @@ public class MapWidget extends MVCObjectWidget<MapImpl> {
     impl.setControls(controls);
   };
 
+  /**
+   * sets Additional controls to attach to the map. To add a control to the map, add the control's <div> to the MVCArray corresponding to the ControlPosition where it should be rendered.
+   * @param controlPosition
+   * @param element
+   */
+  public void setControls(ControlPosition controlPosition, Element element) {
+    impl.setControls(controlPosition, element);
+  };
+  
+  /**
+   * sets Additional controls to attach to the map. To add a control to the map, add the control's <div> to the MVCArray corresponding to the ControlPosition where it should be rendered.
+   * @param controlPosition
+   * @param widget
+   */
+  public void setControls(ControlPosition controlPosition, Widget widget) {
+    impl.setControls(controlPosition, widget.getElement());
+  };
+  
   /**
    * TODO
    * gets Additional controls to attach to the map. To add a control to the map, add the control's <div> to the MVCArray corresponding to the ControlPosition where it should be rendered.
