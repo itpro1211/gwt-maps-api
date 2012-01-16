@@ -124,6 +124,7 @@ public class CustomControlsMapWidget extends Composite {
     widget.addStyleName("TestControls");
     
     //TODO I'm not able to get the stylesheet to work.
+    // This works below
     DOM.setStyleAttribute(widget.getElement(), "background", "white");
     DOM.setStyleAttribute(widget.getElement(), "padding", "5px");
     DOM.setStyleAttribute(widget.getElement(), "margin", "3px");
