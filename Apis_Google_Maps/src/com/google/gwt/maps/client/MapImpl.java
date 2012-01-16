@@ -51,6 +51,8 @@ import com.google.gwt.maps.client.maptypes.Projection;
 import com.google.gwt.maps.client.mvc.MVCArray;
 import com.google.gwt.maps.client.mvc.MVCObject;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Creates a new map inside of the given HTML container, which is typically a DIV element

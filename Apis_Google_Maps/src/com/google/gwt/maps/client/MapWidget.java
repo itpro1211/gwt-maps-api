@@ -1,5 +1,9 @@
 package com.google.gwt.maps.client;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -32,9 +36,17 @@ import com.google.gwt.maps.client.mvc.MVCArray;
 import com.google.gwt.maps.client.mvc.MVCObjectWidget;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
 import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 public class MapWidget extends MVCObjectWidget<MapImpl> {
+  
+  /**
+   * added controls, must remove them when finished
+   */
+  private HashMap<Integer, Widget> controls = null;
 
   /**
    * reconstruct the mapWidget from jso
@@ -56,6 +68,24 @@ public class MapWidget extends MVCObjectWidget<MapImpl> {
     setStyleName("gwt-map-MapWidget-div");
   }
   
+  @Override
+  protected void onDetach() {
+    removeControls();
+    super.onDetach();
+  }
+  
+  private void removeControls() {
+    if (controls == null) {
+      return;
+    }
+    Collection<Widget> widgets = controls.values();
+    Iterator<Widget> itr = widgets.iterator();
+    while(itr.hasNext()) {
+      Widget w = itr.next();
+      w.removeFromParent();
+    }
+  }
+
   /**
    * reconstruct the mapWidget from jso
    * @param impl JavaScriptObject
@@ -271,9 +301,47 @@ public class MapWidget extends MVCObjectWidget<MapImpl> {
    * @param widget
    */
   public void setControls(ControlPosition controlPosition, Widget widget) {
-    impl.setControls(controlPosition, widget.getElement());
+    
+    // remove any pre-existing controls
+    removePriorControlFirst(controlPosition);
+    
+    // add it to array for detaching
+    if (controls == null) {
+      controls = new HashMap<Integer, Widget>();
+    }
+    controls.put(controlPosition.value(), widget);
+   
+    // must add the widget (onAttatch) into the array parallel dom structure
+    // must add it to the dom before we can wrap it.
+    // so far this is the best way I've found
+    // this isn't ideal yet b/c if the element init is slow, you see the elements added and moved
+    FlowPanel fp = new FlowPanel(); 
+    RootPanel.get().add(fp); 
+    
+    // wrap the element, this will do the job
+    HTMLPanel html = HTMLPanel.wrap(fp.getElement());
+    html.add(widget);
+    
+    // add it to the map
+    impl.setControls(controlPosition, fp.getElement());
   };
   
+  /**
+   * remove an pre-existing control so we don't get a mem leak
+   * @param controlPosition
+   * @param widget
+   */
+  private void removePriorControlFirst(ControlPosition controlPosition) {
+    if (controls == null) {
+      return;
+    }
+    Widget w = controls.get(controlPosition.value());
+    if (w == null) {
+      return;
+    }
+    w.removeFromParent();
+  }
+
   /**
    * TODO
    * gets Additional controls to attach to the map. To add a control to the map, add the control's <div> to the MVCArray corresponding to the ControlPosition where it should be rendered.
