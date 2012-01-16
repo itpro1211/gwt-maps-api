@@ -74,27 +74,27 @@ public class Apis_Maps_Test implements EntryPoint {
 
     drawCustomControlsMap();
     
-//    drawInfoWindowMap();
-//    
-//    drawStreetViewSideBySide();
-//    
-//    drawStreetViewCustom();
-//    
-//    drawStreetView();
-//    
-//    drawAutocomplete();
-//    
-//    drawDrawingMap();
-//    
-//    drawBasicMap();
-//    
-//    drawFusionMap();
-//    
-//    drawKmlMap();
-//    
-//    drawMapWcontrols();
-//    
-//    drawPanoramioMap();
+    drawInfoWindowMap();
+    
+    drawStreetViewSideBySide();
+    
+    drawStreetViewCustom();
+    
+    drawStreetView();
+    
+    drawAutocomplete();
+    
+    drawDrawingMap();
+    
+    drawBasicMap();
+    
+    drawFusionMap();
+    
+    drawKmlMap();
+    
+    drawMapWcontrols();
+    
+    drawPanoramioMap();
     
   }
   
