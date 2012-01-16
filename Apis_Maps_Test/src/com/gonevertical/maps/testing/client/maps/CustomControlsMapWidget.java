@@ -39,6 +39,7 @@ import com.google.gwt.maps.client.overlays.InfoWindow;
 import com.google.gwt.maps.client.overlays.InfoWindowOptions;
 import com.google.gwt.maps.client.overlays.Marker;
 import com.google.gwt.maps.client.overlays.MarkerOptions;
+import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
@@ -117,13 +118,20 @@ public class CustomControlsMapWidget extends Composite {
     
     FlowPanel widget = new FlowPanel();
     widget.add(button);
-    widget.add(new HTML("test"));
+    widget.add(new HTML("Custom Controls"));
     widget.add(button);
     widget.add(cb);
+    widget.addStyleName("TestControls");
+    
+    //TODO I'm not able to get the stylesheet to work.
+    DOM.setStyleAttribute(widget.getElement(), "background", "white");
+    DOM.setStyleAttribute(widget.getElement(), "padding", "5px");
+    DOM.setStyleAttribute(widget.getElement(), "margin", "3px");
+    DOM.setStyleAttribute(widget.getElement(), "border", "3px solid #FF0000");
    
     mapWidget.setControls(ControlPosition.RIGHT_CENTER, widget);
     
-//    widget.addStyleName("TestControls");
+    
   }
 
   
