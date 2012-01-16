@@ -11,6 +11,7 @@ import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
 import com.google.gwt.maps.client.controls.ControlPosition;
 import com.google.gwt.maps.client.events.MapHandlerRegistration;
+import com.google.gwt.maps.client.events.MapPanel;
 import com.google.gwt.maps.client.events.bounds.BoundsChangeMapHandler;
 import com.google.gwt.maps.client.events.center.CenterChangeMapHandler;
 import com.google.gwt.maps.client.events.click.ClickMapHandler;
@@ -305,25 +306,18 @@ public class MapWidget extends MVCObjectWidget<MapImpl> {
     // remove any pre-existing controls
     removePriorControlFirst(controlPosition);
     
+    // use a panel that controls onAttatch
+    MapPanel mapPanel = new MapPanel();
+    mapPanel.add(widget);
+
     // add it to array for detaching
     if (controls == null) {
       controls = new HashMap<Integer, Widget>();
     }
-    controls.put(controlPosition.value(), widget);
-   
-    // must add the widget (onAttatch) into the array parallel dom structure
-    // must add it to the dom before we can wrap it.
-    // so far this is the best way I've found
-    // this isn't ideal yet b/c if the element init is slow, you see the elements added and moved
-    FlowPanel fp = new FlowPanel(); 
-    RootPanel.get().add(fp); 
-    
-    // wrap the element, this will do the job
-    HTMLPanel html = HTMLPanel.wrap(fp.getElement());
-    html.add(widget);
-    
+    controls.put(controlPosition.value(), mapPanel);
+
     // add it to the map
-    impl.setControls(controlPosition, fp.getElement());
+    impl.setControls(controlPosition, mapPanel.getElement());
   };
   
   /**
