@@ -32,11 +32,14 @@ import com.google.gwt.maps.client.events.mapchange.MapChangeMapEvent;
 import com.google.gwt.maps.client.events.mapchange.MapChangeMapHandler;
 import com.google.gwt.maps.client.events.position.PositionChangeMapEvent;
 import com.google.gwt.maps.client.events.position.PositionChangeMapHandler;
+import com.google.gwt.maps.client.events.tiles.TilesLoadedMapEvent;
+import com.google.gwt.maps.client.events.tiles.TilesLoadedMapHandler;
 import com.google.gwt.maps.client.mvc.MVCArray;
 import com.google.gwt.maps.client.overlays.InfoWindow;
 import com.google.gwt.maps.client.overlays.InfoWindowOptions;
 import com.google.gwt.maps.client.overlays.Marker;
 import com.google.gwt.maps.client.overlays.MarkerOptions;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Composite;
@@ -69,6 +72,11 @@ public class CustomControlsMapWidget extends Composite {
 
     drawMap();
     
+//    mapWidget.addTilesLoadedHandler(new TilesLoadedMapHandler() {
+//      public void onEvent(TilesLoadedMapEvent event) {
+//        drawControls();
+//      }
+//    });
     drawControls();
   }
   
@@ -93,34 +101,29 @@ public class CustomControlsMapWidget extends Composite {
   private void drawControls() {
     
     Button button = new Button("test");
-    CheckBox cb = new CheckBox();
-  
+    button.addClickHandler(new ClickHandler() {
+      public void onClick(ClickEvent event) {
+        Window.alert("Button Clicked");
+      }
+    });
+    
+    final CheckBox cb = new CheckBox();
+    cb.addClickHandler(new ClickHandler() {
+      public void onClick(ClickEvent event) {
+        System.out.println("test cb");
+        Window.alert("CheckBox is " + cb.getValue());
+      }
+    });
     
     FlowPanel widget = new FlowPanel();
     widget.add(button);
     widget.add(new HTML("test"));
     widget.add(button);
     widget.add(cb);
-    
+   
     mapWidget.setControls(ControlPosition.RIGHT_CENTER, widget);
     
-    
-    JavaScriptObject jso = button.getElement();
-    MapHandler<MapEvent> handler = new MapHandler<MapEvent>() {
-      public void onEvent(MapEvent event) {
-        System.out.println("clicked on button");
-      }
-    };
-    MapHandlerRegistration.addDomListener(jso, ClickEvent.getType(), handler, true);
-
-    
-    MapHandler<MapEvent> handler2 = new MapHandler<MapEvent>() {
-      public void onEvent(MapEvent event) {
-        System.out.println("clicked on checkbox");
-      }
-    };
-    MapHandlerRegistration.addDomListener(cb.getElement(), ClickEvent.getType(), handler2, true);
-    
+//    widget.addStyleName("TestControls");
   }
 
   
