@@ -19,6 +19,10 @@
   <entry-point class='com.gonevertical.maps.testing.client.Apis_Maps_Test'/>
 
 
+  <!-- Style sheets -->
+  <stylesheet src="css/style.css"/>
+
+
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
   
