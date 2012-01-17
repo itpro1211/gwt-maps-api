@@ -9,8 +9,6 @@ public class MapPanel extends FlowPanel {
 
   public MapPanel() {
     super();
-    onAttach();
-    RootPanel.detachOnWindowClose(this);
   }
   
   @Override
@@ -21,5 +19,7 @@ public class MapPanel extends FlowPanel {
   @Override
   public void add(Widget child) {
     super.add(child);
+    onAttach();
+    RootPanel.detachOnWindowClose(this);
   }
 }
