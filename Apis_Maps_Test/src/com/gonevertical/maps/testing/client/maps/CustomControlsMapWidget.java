@@ -101,17 +101,24 @@ public class CustomControlsMapWidget extends Composite {
   
   private void drawControls() {
     
-    Button button = new Button("test");
+    Button button = new Button("B1");
     button.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent event) {
-        Window.alert("Button Clicked");
+        Window.alert("Button 1 Clicked");
+      }
+    });
+
+    Button button2 = new Button("B2");
+    button2.addClickHandler(new ClickHandler() {
+      public void onClick(ClickEvent event) {
+        Window.alert("Button 2 Clicked ");
       }
     });
     
     final CheckBox cb = new CheckBox();
     cb.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent event) {
-        System.out.println("test cb");
+        System.out.println("Button 2 Clicked");
         Window.alert("CheckBox is " + cb.getValue());
       }
     });
@@ -120,6 +127,7 @@ public class CustomControlsMapWidget extends Composite {
     widget.add(button);
     widget.add(new HTML("Custom Controls"));
     widget.add(button);
+    widget.add(button2);
     widget.add(cb);
     widget.addStyleName("TestControls");
     
