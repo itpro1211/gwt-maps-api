@@ -2,7 +2,6 @@ package com.google.gwt.maps.client.service;
 
 import java.util.ArrayList;
 
-import com.google.gwt.core.client.JsArray;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
@@ -15,10 +14,8 @@ import com.google.gwt.maps.client.services.DirectionsRendererOptions;
 import com.google.gwt.maps.client.services.DirectionsRequest;
 import com.google.gwt.maps.client.services.DirectionsResult;
 import com.google.gwt.maps.client.services.DirectionsResultHandler;
-import com.google.gwt.maps.client.services.DirectionsRoute;
 import com.google.gwt.maps.client.services.DirectionsService;
 import com.google.gwt.maps.client.services.DirectionsStatus;
-import com.google.gwt.maps.client.services.GeocoderStatus;
 import com.google.gwt.maps.client.services.TravelMode;
 import com.google.gwt.user.client.ui.RootPanel;
 

@@ -1,7 +1,6 @@
 package com.google.gwt.maps.client.services;
 
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.json.client.JSONObject;
 
 /**
  * A service for computing directions between two or more places.

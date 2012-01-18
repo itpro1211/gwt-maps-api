@@ -2,24 +2,16 @@ package com.google.gwt.maps.client.service;
 
 import java.util.ArrayList;
 
-import com.google.gwt.ajaxloader.client.ArrayHelper;
-import com.google.gwt.core.client.JsArray;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
 import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapWidget;
-import com.google.gwt.maps.client.overlays.InfoWindow;
-import com.google.gwt.maps.client.overlays.InfoWindowOptions;
-import com.google.gwt.maps.client.overlays.MarkerOptions;
-import com.google.gwt.maps.client.overlays.PolylineOptions;
 import com.google.gwt.maps.client.services.DirectionsRenderer;
 import com.google.gwt.maps.client.services.DirectionsRendererOptions;
 import com.google.gwt.maps.client.services.DirectionsResult;
-import com.google.gwt.maps.client.services.DirectionsRoute;
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class DirectionsRendererTest extends GWTTestCase {

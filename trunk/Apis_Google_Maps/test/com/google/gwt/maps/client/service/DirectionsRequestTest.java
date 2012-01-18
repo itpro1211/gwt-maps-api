@@ -9,8 +9,6 @@ import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.services.DirectionsRequest;
-import com.google.gwt.maps.client.services.DirectionsResult;
-import com.google.gwt.maps.client.services.DirectionsRoute;
 import com.google.gwt.maps.client.services.DirectionsWaypoint;
 import com.google.gwt.maps.client.services.TravelMode;
 import com.google.gwt.maps.client.services.UnitSystem;
