@@ -79,7 +79,7 @@ public class DirectionsServiceMapWidget extends Composite {
 
     pWidget.clear();
 
-    pWidget.add(new HTML("<br>Custom Controls"));
+    pWidget.add(new HTML("<br>Directions Service"));
 
     drawMap();
     
