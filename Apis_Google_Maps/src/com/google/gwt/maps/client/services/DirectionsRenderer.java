@@ -52,7 +52,7 @@ public class DirectionsRenderer extends MVCObject<DirectionsRenderer> {
   }
 
   private final native void setMapImpl(MapImpl map) /*-{
-    this.map = map;
+    this.setMap(map);
   }-*/;
 
   /**
@@ -64,7 +64,7 @@ public class DirectionsRenderer extends MVCObject<DirectionsRenderer> {
   }
 
   private final native MapImpl getMapImpl() /*-{
-    return this.map;
+    return this.getMap();
   }-*/;
 
   /**
@@ -96,7 +96,7 @@ public class DirectionsRenderer extends MVCObject<DirectionsRenderer> {
    * @param options
    */
   public final native void setOptions(DirectionsRendererOptions options) /*-{
-    this.options = options;
+    this.setOptions(options);
   }-*/;
   
   /**
@@ -111,8 +111,8 @@ public class DirectionsRenderer extends MVCObject<DirectionsRenderer> {
    * Set the (zero-based) index of the route in the DirectionsResult object to render. By default, the first route in the array will be rendered.
    * @param route
    */
-  public final native void setRouteIndex(int route) /*-{
-    this.route = route;
+  public final native void setRouteIndex(int routeIndex) /*-{
+    this.setRouteIndex(routeIndex);
   }-*/;
   
   /**

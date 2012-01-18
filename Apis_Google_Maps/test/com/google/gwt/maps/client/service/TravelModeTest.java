@@ -19,6 +19,27 @@ public class TravelModeTest extends GWTTestCase {
     assertEquals(true, true);
   }
 
+  public void testReverseEngineer() {
+    boolean sensor = false;
+    ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
+    loadLibraries.add(LoadLibrary.PLACES);   
+    LoadApi.go(new Runnable() {
+      public void run() {
+        reverseEngineer();
+        finishTest();
+      }
+    }, loadLibraries , sensor);
+  }
+
+  private native void reverseEngineer() /*-{
+    var array = ["BICYCLING", "DRIVING", "WALKING"]
+    for (var i=0; i < array.length; i++) {      
+      var s = "$wnd.google.maps.TravelMode." + array[i];
+      alert(array[i] + "=" + eval(s));
+    }
+  }-*/;
+
+  
   public void testUse() {
     boolean sensor = false;
     ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();

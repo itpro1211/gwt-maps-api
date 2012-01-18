@@ -16,6 +16,9 @@ public class MapPanel extends FlowPanel {
     super.onAttach();
   }
   
+  /**
+   * todo only do this once, b/c other wise it probably won't act right adding it over and over
+   */
   @Override
   public void add(Widget child) {
     super.add(child);
