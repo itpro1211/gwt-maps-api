@@ -22,7 +22,7 @@ public enum TravelMode {
   WALKING;
     
   public String value() {
-    return name().toLowerCase();
+    return name();
   }
   
   public static TravelMode fromValue(String type) {

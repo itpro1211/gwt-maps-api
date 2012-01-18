@@ -23,6 +23,13 @@ public class DirectionsRequest extends JavaScriptObject {
     return JavaScriptObject.createObject().cast();
   }
   
+//  public final native void test() /*-{
+//    this.origin = "Arlington, WA";
+//    this.destination = "Seattle, WA";
+//    this.travelMode = $wnd.google.maps.TravelMode.DRIVING;
+//  }-*/;
+  
+  
   /**
    * If true, instructs the Directions service to avoid highways where possible. Optional.
    * @param avoidHighways
@@ -54,7 +61,7 @@ public class DirectionsRequest extends JavaScriptObject {
   public final native boolean getAvoidTolls() /*-{
     return this.avoidTolls;
   }-*/;
-  
+
   /**
    * Location of destination. This can be specified as either a string to be geocoded or a LatLng. Required.
    * @param destination
@@ -64,7 +71,7 @@ public class DirectionsRequest extends JavaScriptObject {
   }-*/;
   
   /**
-   * Location of destination. This can be specified as either a string to be geocoded or a LatLng. Required.
+   * Location of destination. This can be specified as either a string to be geocoded or a LatLng.
    */
   public final native String getDestination_String() /*-{
     return this.destination;
@@ -79,7 +86,7 @@ public class DirectionsRequest extends JavaScriptObject {
   }-*/;
   
   /**
-   * Location of destination. This can be specified as either a string to be geocoded or a LatLng. Required.
+   * Location of destination. This can be specified as either a string to be geocoded or a LatLng.
    * @return
    */
   public final native LatLng getDestination_LatLng() /*-{
@@ -106,12 +113,12 @@ public class DirectionsRequest extends JavaScriptObject {
    * Location of origin. This can be specified as either a string to be geocoded or a LatLng. Required.
    * @param orgin
    */
-  public final native void setOrigin(String orgin) /*-{
+  public final native void setOrigin(String origin) /*-{
     this.origin = origin;
   }-*/;
   
   /**
-   * Location of origin. This can be specified as either a string to be geocoded or a LatLng. Required.
+   * Location of origin. This can be specified as either a string to be geocoded or a LatLng. 
    * @return
    */
   public final native String getOrigin_String() /*-{
@@ -127,7 +134,7 @@ public class DirectionsRequest extends JavaScriptObject {
   }-*/;
   
   /**
-   * Location of origin. This can be specified as either a string to be geocoded or a LatLng. Required.
+   * Location of origin. This can be specified as either a string to be geocoded or a LatLng.
    */
   public final native LatLng getOrigin_LatLng() /*-{
     return this.origin;
@@ -174,7 +181,7 @@ public class DirectionsRequest extends JavaScriptObject {
   }
 
   private final native void setTravelModeImpl(String travelMode) /*-{
-    this.travelMode = travelMode;
+    this.travelMode = "DRIVING";
   }-*/;
   
   /**

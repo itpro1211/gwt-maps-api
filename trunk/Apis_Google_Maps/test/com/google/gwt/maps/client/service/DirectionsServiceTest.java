@@ -2,15 +2,25 @@ package com.google.gwt.maps.client.service;
 
 import java.util.ArrayList;
 
+import com.google.gwt.core.client.JsArray;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
+import com.google.gwt.maps.client.MapOptions;
+import com.google.gwt.maps.client.MapTypeId;
+import com.google.gwt.maps.client.MapWidget;
+import com.google.gwt.maps.client.base.LatLng;
+import com.google.gwt.maps.client.services.DirectionsRenderer;
+import com.google.gwt.maps.client.services.DirectionsRendererOptions;
 import com.google.gwt.maps.client.services.DirectionsRequest;
 import com.google.gwt.maps.client.services.DirectionsResult;
 import com.google.gwt.maps.client.services.DirectionsResultHandler;
+import com.google.gwt.maps.client.services.DirectionsRoute;
 import com.google.gwt.maps.client.services.DirectionsService;
 import com.google.gwt.maps.client.services.DirectionsStatus;
 import com.google.gwt.maps.client.services.GeocoderStatus;
+import com.google.gwt.maps.client.services.TravelMode;
+import com.google.gwt.user.client.ui.RootPanel;
 
 public class DirectionsServiceTest extends GWTTestCase {
 
@@ -42,14 +52,60 @@ public class DirectionsServiceTest extends GWTTestCase {
     loadLibraries.add(LoadLibrary.PLACES);   
     LoadApi.go(new Runnable() {
       public void run() {
+        
+        LatLng center = LatLng.newInstance(37.7699298, -122.4469157);
+        
+        MapOptions optionsMap = MapOptions.newInstance();
+        optionsMap.setCenter(center);
+        optionsMap.setZoom(14);
+        optionsMap.setMapTypeId(MapTypeId.ROADMAP);
+        
+        MapWidget mapWidget = new MapWidget(optionsMap);
+        RootPanel.get().add(mapWidget);
+        
+        DirectionsRendererOptions options = DirectionsRendererOptions.newInstance();
+        final DirectionsRenderer directionsDisplay = DirectionsRenderer.newInstance(options);
+        
+        
+        LatLng origin = LatLng.newInstance(37.7699298, -122.4469157);
+        LatLng destination = LatLng.newInstance(37.7683909618184, -122.51089453697205);
+        
         DirectionsService o = DirectionsService.newInstance();
         DirectionsRequest request = DirectionsRequest.newInstance();
+        request.setOrigin(origin);
+        request.setDestination(destination);
+        request.setTravelMode(TravelMode.DRIVING);
+        
         o.route(request, new DirectionsResultHandler() {
           public void onCallback(DirectionsResult result, DirectionsStatus status) {
-            
+            if (status == DirectionsStatus.OK) {
+              
+              //JsArray<DirectionsRoute> routes = result.getRoutes();
+              directionsDisplay.setDirections(result);
+              
+              System.out.println("resultSize=" + result.getRoutes().length());
+              assertTrue(true);
+              
+            } else if (status == DirectionsStatus.INVALID_REQUEST) {
+              fail();
+            } else if (status == DirectionsStatus.MAX_WAYPOINTS_EXCEEDED) {
+              fail();
+            } else if (status == DirectionsStatus.NOT_FOUND) {
+              fail();
+            } else if (status == DirectionsStatus.OVER_QUERY_LIMIT) {
+              fail();
+            } else if (status == DirectionsStatus.REQUEST_DENIED) {
+              fail();
+            } else if (status == DirectionsStatus.UNKNOWN_ERROR) {
+              fail();
+            } else if (status == DirectionsStatus.ZERO_RESULTS) {
+              fail();
+            }
+          
+            finishTest();
           }
         });
-        finishTest();
+        //finishTest();
       }
     }, loadLibraries , sensor);
   }
