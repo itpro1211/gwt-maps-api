@@ -10,9 +10,16 @@
   <!-- Inherit the default GWT style sheet.  				      -->
   
   
+  <!-- I'm using json for debugging -->
+  <inherits name="com.google.gwt.json.JSON" />
+  
+  
 
   <!-- Other module inherits                                      -->
   <inherits name='com.google.gwt.maps.Apis_Google_Maps'/>
+
+
+  
 
 
   <!-- Specify the app entry point class.                         -->
