@@ -42,18 +42,18 @@ public class DirectionsService extends JavaScriptObject {
       @com.google.gwt.maps.client.services.DirectionsService::routeImpl(Lcom/google/gwt/maps/client/services/DirectionsResult;Ljava/lang/String;Lcom/google/gwt/maps/client/services/DirectionsResultHandler;)(result, status, handler);
     };
     
-    // TODO this works - but the incoming request2 jso, matches exactly yet, won't work, ????
+    //  TODO this works - but the incoming request2 jso, matches exactly yet, won't work, ????
     var request = {
       origin: "Arlington, WA",
       destination: "Seattle, WA",
-      travelMode: $wnd.google.maps.TravelMode.DRIVING
+      travelMode: "DRIVING" // or is $wnd.google.maps.TravelMode.DRIVING
     };
     
     // output the object for debugging
     //@com.google.gwt.maps.client.services.DirectionsService::test(Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)("request", request);
     //@com.google.gwt.maps.client.services.DirectionsService::test(Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)("request2=", request2);
     
-    this.route(request2, callback);
+    this.route(request, callback);
     
   }-*/;
   
