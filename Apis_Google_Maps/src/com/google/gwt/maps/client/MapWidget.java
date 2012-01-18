@@ -37,9 +37,6 @@ import com.google.gwt.maps.client.mvc.MVCArray;
 import com.google.gwt.maps.client.mvc.MVCObjectWidget;
 import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
 import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTMLPanel;
-import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 public class MapWidget extends MVCObjectWidget<MapImpl> {
