@@ -24,7 +24,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 public class DirectionsServiceTest extends GWTTestCase {
 
-  public static final int ASYNC_DELAY_MS = 5000;
+  public static final int ASYNC_DELAY_MS = 7000;
 
   public String getModuleName() {
     return "com.google.gwt.maps.Apis_Google_Maps_ForTests";

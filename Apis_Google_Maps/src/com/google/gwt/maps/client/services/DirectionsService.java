@@ -28,10 +28,13 @@ public class DirectionsService extends JavaScriptObject {
   
   /**
    * Issue a directions search request.
+   * 
+   *  TODO I can't test this in dev mode, but seems to be working in production deployed. maps api can't find <__gwt_ObjectId>
+   * 
    * @param request
    * @param handler
    */
-  public final native void route(DirectionsRequest request2, DirectionsResultHandler handler) /*-{
+  public final native void route(DirectionsRequest request, DirectionsResultHandler handler) /*-{
     var callback = function(result, status) {
       
       // debug
@@ -42,19 +45,18 @@ public class DirectionsService extends JavaScriptObject {
       @com.google.gwt.maps.client.services.DirectionsService::routeImpl(Lcom/google/gwt/maps/client/services/DirectionsResult;Ljava/lang/String;Lcom/google/gwt/maps/client/services/DirectionsResultHandler;)(result, status, handler);
     };
     
-    //  TODO this works - but the incoming request2 jso, matches exactly yet, won't work, ????
-    var request = {
-      origin: "Arlington, WA",
-      destination: "Seattle, WA",
-      travelMode: "DRIVING" // or is $wnd.google.maps.TravelMode.DRIVING
-    };
+//    // this works - but the incoming request2 jso, matches exactly yet, won't work, ????
+//    var request2 = {
+//      origin: "Arlington, WA",
+//      destination: "Seattle, WA",
+//      travelMode: "DRIVING" // or is $wnd.google.maps.TravelMode.DRIVING
+//    };
     
     // output the object for debugging
     //@com.google.gwt.maps.client.services.DirectionsService::test(Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)("request", request);
     //@com.google.gwt.maps.client.services.DirectionsService::test(Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)("request2=", request2);
     
     this.route(request, callback);
-    
   }-*/;
   
   private static final void routeImpl(DirectionsResult result, String status, DirectionsResultHandler handler) {
