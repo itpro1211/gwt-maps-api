@@ -13,8 +13,6 @@ import com.google.gwt.maps.client.events.channelnumber.ChannelNumberChangeMapEve
 import com.google.gwt.maps.client.events.channelnumber.ChannelNumberChangeMapHandler;
 import com.google.gwt.maps.client.events.click.ClickMapEvent;
 import com.google.gwt.maps.client.events.click.ClickMapHandler;
-import com.google.gwt.maps.client.events.clickable.ClickableChangeMapEvent;
-import com.google.gwt.maps.client.events.clickable.ClickableChangeMapHandler;
 import com.google.gwt.maps.client.events.format.FormatChangeMapEvent;
 import com.google.gwt.maps.client.events.format.FormatChangeMapHandler;
 import com.google.gwt.maps.client.events.mapchange.MapChangeMapEvent;

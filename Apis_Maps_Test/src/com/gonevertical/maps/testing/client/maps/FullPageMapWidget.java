@@ -20,8 +20,6 @@ import com.google.gwt.maps.client.events.position.PositionChangeMapEvent;
 import com.google.gwt.maps.client.events.position.PositionChangeMapHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * 
