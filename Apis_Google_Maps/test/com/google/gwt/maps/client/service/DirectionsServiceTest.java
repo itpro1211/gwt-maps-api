@@ -62,28 +62,29 @@ public class DirectionsServiceTest extends GWTTestCase {
         
         MapWidget mapWidget = new MapWidget(optionsMap);
         RootPanel.get().add(mapWidget);
+       
+
         
         DirectionsRendererOptions options = DirectionsRendererOptions.newInstance();
         final DirectionsRenderer directionsDisplay = DirectionsRenderer.newInstance(options);
+        directionsDisplay.setMap(mapWidget);
         
+        //LatLng origin = LatLng.newInstance(37.7699298, -122.4469157);
+        //LatLng destination = LatLng.newInstance(37.7683909618184, -122.51089453697205);
         
-        LatLng origin = LatLng.newInstance(37.7699298, -122.4469157);
-        LatLng destination = LatLng.newInstance(37.7683909618184, -122.51089453697205);
+        String origin = "Arlington, WA";
+        String destination = "Seattle, WA";
         
-        DirectionsService o = DirectionsService.newInstance();
         DirectionsRequest request = DirectionsRequest.newInstance();
         request.setOrigin(origin);
         request.setDestination(destination);
         request.setTravelMode(TravelMode.DRIVING);
         
+        DirectionsService o = DirectionsService.newInstance();
         o.route(request, new DirectionsResultHandler() {
           public void onCallback(DirectionsResult result, DirectionsStatus status) {
             if (status == DirectionsStatus.OK) {
-              
-              //JsArray<DirectionsRoute> routes = result.getRoutes();
               directionsDisplay.setDirections(result);
-              
-              System.out.println("resultSize=" + result.getRoutes().length());
               assertTrue(true);
               
             } else if (status == DirectionsStatus.INVALID_REQUEST) {
@@ -105,7 +106,8 @@ public class DirectionsServiceTest extends GWTTestCase {
             finishTest();
           }
         });
-        //finishTest();
+        
+        
       }
     }, loadLibraries , sensor);
   }
