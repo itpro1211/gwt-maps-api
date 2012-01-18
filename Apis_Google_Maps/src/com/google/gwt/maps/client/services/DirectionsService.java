@@ -61,10 +61,10 @@ public class DirectionsService extends JavaScriptObject {
     handler.onCallback(result, DirectionsStatus.fromValue(status));
   }
   
-  public static final void test(String msg, JavaScriptObject jso) {
-    JSONObject j = new JSONObject(jso);
-    System.out.println("msg= "+ msg + " jso=" + j.toString());
-  }
-  
+//  public static final void test(String msg, JavaScriptObject jso) {
+//    JSONObject j = new JSONObject(jso);
+//    System.out.println("msg= "+ msg + " jso=" + j.toString());
+//  }
+//  
  
 }
