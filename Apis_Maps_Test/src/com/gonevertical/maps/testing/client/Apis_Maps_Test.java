@@ -8,6 +8,7 @@ import com.gonevertical.maps.testing.client.maps.ControlsMapWidget;
 import com.gonevertical.maps.testing.client.maps.CustomControlsMapWidget;
 import com.gonevertical.maps.testing.client.maps.DirectionsServiceMapWidget;
 import com.gonevertical.maps.testing.client.maps.DrawingMapWidget;
+import com.gonevertical.maps.testing.client.maps.ElevationMapWidget;
 import com.gonevertical.maps.testing.client.maps.FusionTablesMapWidget;
 import com.gonevertical.maps.testing.client.maps.InfoWindowMapWidget;
 import com.gonevertical.maps.testing.client.maps.KmlMapWidget;
@@ -73,6 +74,8 @@ public class Apis_Maps_Test implements EntryPoint {
     HTML html = new HTML("<a href=\"Apis_Maps_Test_FullPage.html\">See 100% Map Demo</a><br/><br/>");
     RootPanel.get().add(html);
 
+    drawElevation();
+    
     drawDirections();
     
     drawCustomControlsMap();
@@ -101,6 +104,11 @@ public class Apis_Maps_Test implements EntryPoint {
     
   }
   
+  private void drawElevation() {
+    ElevationMapWidget wMap = new ElevationMapWidget();
+    RootPanel.get().add(wMap);
+  }
+
   private void drawDirections() {
     DirectionsServiceMapWidget wMap = new DirectionsServiceMapWidget();
     RootPanel.get().add(wMap);
