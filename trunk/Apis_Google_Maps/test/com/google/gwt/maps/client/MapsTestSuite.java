@@ -107,6 +107,9 @@ import com.google.gwt.maps.client.service.GeocoderResultTest;
 import com.google.gwt.maps.client.service.GeocoderStatusTest;
 import com.google.gwt.maps.client.service.GeocoderTest;
 import com.google.gwt.maps.client.service.LocationElevationRequestTest;
+import com.google.gwt.maps.client.service.MaxZoomResultTest;
+import com.google.gwt.maps.client.service.MaxZoomServiceTest;
+import com.google.gwt.maps.client.service.MaxZoomStatusTest;
 import com.google.gwt.maps.client.service.PathElevationRequestTest;
 import com.google.gwt.maps.client.service.TravelModeTest;
 import com.google.gwt.maps.client.service.UnitSystemTest;
@@ -259,7 +262,9 @@ public class MapsTestSuite extends GWTTestSuite {
     suite.addTestSuite(PathElevationRequestTest.class);
     suite.addTestSuite(LocationElevationRequestTest.class);
     suite.addTestSuite(ElevationServiceTest.class);
-    
+    suite.addTestSuite(MaxZoomStatusTest.class);
+    suite.addTestSuite(MaxZoomResultTest.class);
+    suite.addTestSuite(MaxZoomServiceTest.class);
     
     return suite;
   }
