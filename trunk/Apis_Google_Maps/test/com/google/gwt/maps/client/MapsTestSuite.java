@@ -94,6 +94,10 @@ import com.google.gwt.maps.client.service.DirectionsRouteTest;
 import com.google.gwt.maps.client.service.DirectionsStatusTest;
 import com.google.gwt.maps.client.service.DirectionsStepTest;
 import com.google.gwt.maps.client.service.DirectionsWaypointTest;
+import com.google.gwt.maps.client.service.DistanceMatrixElementStatusTest;
+import com.google.gwt.maps.client.service.DistanceMatrixRequestTest;
+import com.google.gwt.maps.client.service.DistanceMatrixServiceTest;
+import com.google.gwt.maps.client.service.DistanceMatrixStatusTest;
 import com.google.gwt.maps.client.service.DistanceTest;
 import com.google.gwt.maps.client.service.DurationTest;
 import com.google.gwt.maps.client.service.ElevationResultTest;
@@ -265,6 +269,12 @@ public class MapsTestSuite extends GWTTestSuite {
     suite.addTestSuite(MaxZoomStatusTest.class);
     suite.addTestSuite(MaxZoomResultTest.class);
     suite.addTestSuite(MaxZoomServiceTest.class);
+    suite.addTestSuite(DistanceMatrixStatusTest.class);
+    suite.addTestSuite(DistanceMatrixElementStatusTest.class);
+    suite.addTestSuite(DistanceMatrixRequestTest.class);
+    suite.addTestSuite(DistanceMatrixServiceTest.class);
+    
+    
     
     return suite;
   }

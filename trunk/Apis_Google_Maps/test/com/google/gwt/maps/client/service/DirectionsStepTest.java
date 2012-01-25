@@ -147,7 +147,7 @@ public class DirectionsStepTest extends GWTTestCase {
       public void run() {
         DirectionsStep o = DirectionsStep.newInstance();
         TravelMode left = TravelMode.BICYCLING;
-        o.setTravel_ModeImpl(left);
+        o.setTravel_Mode(left);
         TravelMode right = o.getTravelMode();
         assertEquals(left, right);
         finishTest();
