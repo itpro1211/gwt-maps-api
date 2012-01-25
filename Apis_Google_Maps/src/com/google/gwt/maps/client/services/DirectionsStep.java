@@ -122,7 +122,7 @@ public class DirectionsStep extends JavaScriptObject {
    * The mode of travel used in this step.
    * @param travel_mode
    */
-  public final void setTravel_ModeImpl(TravelMode travel_mode) {
+  public final void setTravel_Mode(TravelMode travel_mode) {
     setTravel_ModeImpl(travel_mode.value());
   }
 
