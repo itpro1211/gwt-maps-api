@@ -2,6 +2,7 @@ package com.google.gwt.maps.client.services;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 
 /**
  * Defines a service class that talks directly to Google servers for requesting elevation data.
@@ -19,7 +20,9 @@ public class ElevationService extends JavaScriptObject {
    * @return
    */
   public static final ElevationService newInstance() {
-    return createJso().cast();
+    JavaScriptObject jso = createJso();
+    WorkAroundUtils.removeGwtObjectId(jso);
+    return jso.cast();
   }
 
   private static final native JavaScriptObject createJso() /*-{

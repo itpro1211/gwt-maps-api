@@ -7,17 +7,12 @@ import com.google.gwt.core.client.JsArray;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
-import com.google.gwt.maps.client.MapOptions;
-import com.google.gwt.maps.client.MapTypeId;
-import com.google.gwt.maps.client.MapWidget;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.services.Distance;
 import com.google.gwt.maps.client.services.ElevationResult;
 import com.google.gwt.maps.client.services.ElevationService;
 import com.google.gwt.maps.client.services.ElevationServiceHandler;
 import com.google.gwt.maps.client.services.ElevationStatus;
 import com.google.gwt.maps.client.services.LocationElevationRequest;
-import com.google.gwt.user.client.ui.RootPanel;
 
 public class ElevationServiceTest extends GWTTestCase {
 

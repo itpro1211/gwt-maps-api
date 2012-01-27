@@ -4,6 +4,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.core.client.JsArrayString;
 import com.google.gwt.maps.client.base.LatLng;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 
 /**
  * A distance matrix query sent by the DistanceMatrixService containing arrays of origin and destination locations, and various options for computing metrics.
@@ -21,7 +22,9 @@ public class DistanceMatrixRequest extends JavaScriptObject {
    * @return
    */
   public static final DistanceMatrixRequest newInstance() {
-    return JavaScriptObject.createObject().cast();
+    JavaScriptObject jso = JavaScriptObject.createObject();
+    WorkAroundUtils.removeGwtObjectId(jso);
+    return jso.cast();
   }
   
   /**

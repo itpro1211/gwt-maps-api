@@ -23,6 +23,7 @@ import com.google.gwt.maps.client.events.visible.VisibleChangeEventFormatter;
 import com.google.gwt.maps.client.events.visible.VisibleChangeMapHandler;
 import com.google.gwt.maps.client.mvc.MVCArray;
 import com.google.gwt.maps.client.mvc.MVCObject;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 
 /**
  * Displays the panorama for a given LatLng or panorama ID. A StreetViewPanorama object provides a Street View "viewer" which can be stand-alone within a separate <div> or bound to a Map. This class extends MVCObject.
@@ -43,7 +44,9 @@ public class StreetViewPanoramaImpl extends MVCObject<StreetViewPanoramaImpl> {
    * @return {@link StreetViewPanoramaImpl}
    */
   public static StreetViewPanoramaImpl newInstance(Element element, StreetViewPanoramaOptions options) {
-    return createJso(element, options).cast();
+    JavaScriptObject jso = createJso(element, options);
+    WorkAroundUtils.removeGwtObjectId(jso);
+    return jso.cast();
   }
 
   private final static native JavaScriptObject createJso(Element container, StreetViewPanoramaOptions opts) /*-{

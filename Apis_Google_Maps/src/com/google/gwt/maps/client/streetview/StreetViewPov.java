@@ -1,6 +1,7 @@
 package com.google.gwt.maps.client.streetview;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 
 /**
  * A point of view object which specifies the camera's orientation at the Street View panorama's position. The point of view is defined as heading, pitch and zoom.
@@ -19,7 +20,9 @@ public class StreetViewPov extends JavaScriptObject {
    * @return
    */
   public final static StreetViewPov newInstance() {
-    return JavaScriptObject.createObject().cast();
+    JavaScriptObject jso = JavaScriptObject.createObject();
+    WorkAroundUtils.removeGwtObjectId(jso);
+    return jso.cast(); 
   }
   
   /**

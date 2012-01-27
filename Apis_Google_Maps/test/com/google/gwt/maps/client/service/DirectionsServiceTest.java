@@ -17,6 +17,7 @@ import com.google.gwt.maps.client.services.DirectionsResultHandler;
 import com.google.gwt.maps.client.services.DirectionsService;
 import com.google.gwt.maps.client.services.DirectionsStatus;
 import com.google.gwt.maps.client.services.TravelMode;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class DirectionsServiceTest extends GWTTestCase {
@@ -78,6 +79,11 @@ public class DirectionsServiceTest extends GWTTestCase {
         request.setTravelMode(TravelMode.DRIVING);
         
         DirectionsService o = DirectionsService.newInstance();
+        
+        // fix for debugging mode
+        WorkAroundUtils.removeGwtObjectId(o);
+        WorkAroundUtils.removeGwtObjectId(request);
+        
         o.route(request, new DirectionsResultHandler() {
           public void onCallback(DirectionsResult result, DirectionsStatus status) {
             if (status == DirectionsStatus.OK) {

@@ -1,6 +1,7 @@
 package com.google.gwt.maps.client.services;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 
 /**
  * A service for computing distances between multiple origins and destinations.
@@ -18,7 +19,9 @@ public class DistanceMatrixService extends JavaScriptObject {
    * @return
    */
   public static final DistanceMatrixService newInstance() {
-    return createJso().cast();
+    JavaScriptObject jso = createJso();
+    WorkAroundUtils.removeGwtObjectId(jso);
+    return jso.cast();
   }
   
   private static final native JavaScriptObject createJso() /*-{

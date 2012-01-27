@@ -8,8 +8,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.maps.client.LoadApi;
 import com.google.gwt.maps.client.LoadApi.LoadLibrary;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.services.Distance;
-import com.google.gwt.maps.client.services.ElevationResult;
 import com.google.gwt.maps.client.services.PathElevationRequest;
 
 public class PathElevationRequestTest extends GWTTestCase {
