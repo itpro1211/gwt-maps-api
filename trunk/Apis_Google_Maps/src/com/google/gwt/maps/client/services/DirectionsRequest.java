@@ -3,6 +3,7 @@ package com.google.gwt.maps.client.services;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.maps.client.base.LatLng;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 
 /**
  * A directions query to be sent to the DirectionsService.
@@ -20,7 +21,9 @@ public class DirectionsRequest extends JavaScriptObject {
    * @return
    */
   public static final DirectionsRequest newInstance() {
-    return JavaScriptObject.createObject().cast();
+    JavaScriptObject jso = JavaScriptObject.createObject();
+    WorkAroundUtils.removeGwtObjectId(jso);
+    return jso.cast();
   }
   
 //  public final native void test() /*-{

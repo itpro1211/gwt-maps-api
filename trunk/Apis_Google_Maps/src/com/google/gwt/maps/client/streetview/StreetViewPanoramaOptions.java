@@ -4,6 +4,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.controls.PanControlOptions;
 import com.google.gwt.maps.client.controls.ZoomControlOptions;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 
 /**
  * Options defining the properties of a StreetViewPanorama object.
@@ -22,7 +23,9 @@ public class StreetViewPanoramaOptions extends JavaScriptObject {
    * @return {@link StreetViewPanoramaOptions}
    */
   public final static StreetViewPanoramaOptions newInstance() {
-    return JavaScriptObject.createObject().cast();
+    JavaScriptObject jso = JavaScriptObject.createObject();
+    WorkAroundUtils.removeGwtObjectId(jso);
+    return jso.cast(); 
   }
 
   /**

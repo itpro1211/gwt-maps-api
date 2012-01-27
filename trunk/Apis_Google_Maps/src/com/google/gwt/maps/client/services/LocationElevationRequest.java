@@ -3,6 +3,7 @@ package com.google.gwt.maps.client.services;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.maps.client.base.LatLng;
+import com.google.gwt.maps.client.workaround.WorkAroundUtils;
 
 /**
  * An elevation request sent by the ElevationService containing the list of discrete coordinates (LatLngs) for which to return elevation data.
@@ -20,7 +21,9 @@ public class LocationElevationRequest extends JavaScriptObject {
    * @return
    */
   public final static LocationElevationRequest newInstance() {
-    return JavaScriptObject.createObject().cast();
+    JavaScriptObject jso = JavaScriptObject.createObject();
+    WorkAroundUtils.removeGwtObjectId(jso);
+    return jso.cast();
   }
   
   /**
