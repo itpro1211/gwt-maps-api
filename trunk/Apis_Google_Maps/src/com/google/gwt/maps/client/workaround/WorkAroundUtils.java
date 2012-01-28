@@ -6,7 +6,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 public class WorkAroundUtils {
 
   /**
-   * When a thirdparty api complains about this extra element in the object. This only happens in DevMode 
+   * When a third party api complains about this extra element in the object. This only happens in DevMode 
    * The JSO carries an __gwt_ObjectId in devMode, which needs to be removed in some cases.
    * @param jso
    */
