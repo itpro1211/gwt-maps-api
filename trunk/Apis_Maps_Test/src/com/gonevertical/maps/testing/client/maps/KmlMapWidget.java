@@ -77,7 +77,7 @@ public class KmlMapWidget extends Composite {
 
     //String url = "http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss";
     
-    // TODO this won't work in devmode but works in production
+    // TODO this won't work in devmode but works in production, can't point to localhost. 
     String base = GWT.getHostPageBaseURL();
     String url = base + "/kmlgenerator?id=120234&pass=1345&msg=hi";
 

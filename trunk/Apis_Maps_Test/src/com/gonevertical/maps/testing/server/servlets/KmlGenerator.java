@@ -103,7 +103,7 @@ public class KmlGenerator extends HttpServlet {
       // TODO some encoding of the querystring & has to take place and maybe other chars
       //example[0] = "http://sites.google.com/a/cyclingthealps.com/cyclingthealps/routes/Flueelapass.kmz?attredirects=0&d=1";
       
-      example[0] = "http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;output=nl&amp;msid=105432215366276592381.0004897737811ac6a6a05";
+      example[0] = "http://sites.google.com/a/cyclingthealps.com/cyclingthealps/routes/Flueelapass.kmz?attredirects=0&amp;d=1";
       example[1] = "http://www.mappingsupport.com/p/gmap4/helpfile/County_Line_trail.kml";
       example[2] = "http://www.mappingsupport.com/p/gmap4/helpfile/Teanaway_Peaks.kml";
     }
